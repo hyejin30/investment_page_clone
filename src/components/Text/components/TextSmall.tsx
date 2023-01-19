@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import { theme } from 'styles';
 
 interface ITextSmall {
   children: ReactNode;
@@ -7,7 +8,7 @@ interface ITextSmall {
   color?: string;
 }
 
-function TextSmall({ children, fontWeight = 300, color = '#fcfcfc' }: ITextSmall) {
+function TextSmall({ children, fontWeight = 300, color = theme.white }: ITextSmall) {
   return (
     <Text color={color} fontWeight={fontWeight}>
       {children}

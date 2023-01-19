@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import { theme } from 'styles';
 
 interface ITextMedium {
   children: ReactNode;
@@ -7,7 +8,7 @@ interface ITextMedium {
   color?: string;
 }
 
-function TextMedium({ children, fontWeight = 300, color = '#fcfcfc' }: ITextMedium) {
+function TextMedium({ children, fontWeight = 300, color = theme.white }: ITextMedium) {
   return (
     <Text color={color} fontWeight={fontWeight}>
       {children}
