@@ -30,4 +30,5 @@ const Container = styled.div`
 
 const Body = styled.main`
   width: 1020px;
+  padding: 40px 0;
 `;
