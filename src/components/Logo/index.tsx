@@ -4,10 +4,10 @@ import { fitImg } from 'styles';
 
 interface ILogoProps {
   path?: string;
-  width: number;
+  width?: number;
 }
 
-function Logo({ width, path = '' }: ILogoProps) {
+function Logo({ width = 156, path = '' }: ILogoProps) {
   if (path) {
     return (
       <Link to={path}>
