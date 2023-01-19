@@ -10,6 +10,12 @@
 yarn create react-app clone_quantus --template typescript
 ```
 
+# 프로젝트 클론 및 패키지 설치
+```
+git clone https://github.com/hyejin30/clone_quantus
+yarn install
+```
+
 <br />
 
 # 프로젝트 실행
