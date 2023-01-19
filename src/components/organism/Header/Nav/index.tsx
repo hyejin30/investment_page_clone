@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import NavMenu from './NavMenu';
-import WrapperLayout from 'components/organism/WrapperLayout';
+import WrapperLayout from 'components/organism/Layout/WrapperLayout';
 
 import { flex, theme } from 'styles';
 

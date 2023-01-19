@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import Logo from 'components/atoms/Logo';
-import WrapperLayout from 'components/organism/WrapperLayout';
+import WrapperLayout from 'components/organism/Layout/WrapperLayout';
 
 import { flex, theme } from 'styles';
 
