@@ -4,6 +4,10 @@ const theme = {
   white: '#fcfcfc',
   lightGray: '#9f9f9f',
   darkGray: '#6e6e6e',
+  orange: '#ec6126',
+  button: {
+    disabled: '#3e3e3e',
+  },
 };
 
 export default theme;
