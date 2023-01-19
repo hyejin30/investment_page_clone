@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Text from 'components/Text';
+import Text from 'components/atoms/Text';
 
 import { FOOTER_LINK_LIST } from '../constant';
 import { theme, flex } from 'styles';

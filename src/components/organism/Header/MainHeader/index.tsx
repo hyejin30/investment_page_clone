@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Logo from 'components/Logo';
+import Logo from 'components/atoms/Logo';
 
 import { flex, theme } from 'styles';
 

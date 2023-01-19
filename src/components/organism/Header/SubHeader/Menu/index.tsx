@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import Text from 'components/Text';
+import Text from 'components/atoms/Text';
 
 import { theme } from 'styles';
 
