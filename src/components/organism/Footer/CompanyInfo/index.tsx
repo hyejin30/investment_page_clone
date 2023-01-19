@@ -11,7 +11,7 @@ function CompanyInfo() {
     <Wrapper>
       <Logo />
       <Detail>
-        <Text.Medium color={theme.lightGray} fontWeight={500}>
+        <Text.Medium color={theme.lightGray} weight={500}>
           주식회사 퀀터스테크놀로지스
         </Text.Medium>
         {FOOTER_DETAIL_LIST.map((detail) => (

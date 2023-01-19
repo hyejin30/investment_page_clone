@@ -4,13 +4,13 @@ import { theme } from 'styles';
 
 interface ITextMedium {
   children: ReactNode;
-  fontWeight?: number;
+  weight?: number;
   color?: string;
 }
 
-function TextMedium({ children, fontWeight = 300, color = theme.white }: ITextMedium) {
+function TextMedium({ children, weight = 300, color = theme.white }: ITextMedium) {
   return (
-    <Text color={color} fontWeight={fontWeight}>
+    <Text color={color} weight={weight}>
       {children}
     </Text>
   );
@@ -19,12 +19,12 @@ function TextMedium({ children, fontWeight = 300, color = theme.white }: ITextMe
 export default TextMedium;
 
 interface ITextStyle {
-  fontWeight: number;
+  weight: number;
   color: string;
 }
 
 const Text = styled.span<ITextStyle>`
   font-size: 14px;
-  font-weight: ${(props) => props.fontWeight};
+  font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
 `;

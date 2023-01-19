@@ -15,7 +15,7 @@ function Menu({ children, path }: IMenuProps) {
 
   return (
     <Link to={path}>
-      <Text.Medium color={pathname === path ? theme.red : theme.white} fontWeight={400}>
+      <Text.Medium color={pathname === path ? theme.red : theme.white} weight={400}>
         {children}
       </Text.Medium>
     </Link>

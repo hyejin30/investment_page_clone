@@ -4,13 +4,13 @@ import { theme } from 'styles';
 
 interface ITextSmall {
   children: ReactNode;
-  fontWeight?: number;
+  weight?: number;
   color?: string;
 }
 
-function TextSmall({ children, fontWeight = 300, color = theme.white }: ITextSmall) {
+function TextSmall({ children, weight = 300, color = theme.white }: ITextSmall) {
   return (
-    <Text color={color} fontWeight={fontWeight}>
+    <Text color={color} weight={weight}>
       {children}
     </Text>
   );
@@ -19,12 +19,12 @@ function TextSmall({ children, fontWeight = 300, color = theme.white }: ITextSma
 export default TextSmall;
 
 interface ITextStyle {
-  fontWeight: number;
+  weight: number;
   color: string;
 }
 
 const Text = styled.span<ITextStyle>`
   font-size: 12px;
-  font-weight: ${(props) => props.fontWeight};
+  font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
 `;
