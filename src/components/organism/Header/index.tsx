@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { flex } from 'styles';
 
-import TopHeader from './TopHeader';
+import TopMenu from './TopMenu';
 import Nav from './Nav';
 
 function Header() {
   return (
     <Container>
-      <TopHeader />
+      <TopMenu />
       <Nav />
     </Container>
   );
@@ -17,6 +17,6 @@ export default Header;
 
 const Container = styled.header`
   ${flex('', '', 'column')}
-  flex: 1;
+  width: 100%;
   row-gap: 30px;
 `;

@@ -28,6 +28,7 @@ export default ComapanyLinks;
 const List = styled.section`
   ${flex('', '')}
   column-gap: 20px;
+  width: 100%;
 `;
 
 const UnderLineLink = styled.a`

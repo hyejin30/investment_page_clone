@@ -2,14 +2,17 @@ import styled from 'styled-components';
 
 import CompanyInfo from './CompanyInfo';
 import CompanyLinks from './CompanyLinks';
+import WrapperLayout from 'components/organism/WrapperLayout';
 
 import { flex } from 'styles';
 
 function Footer() {
   return (
     <Container>
-      <CompanyInfo />
-      <CompanyLinks />
+      <WrapperLayout>
+        <CompanyInfo />
+        <CompanyLinks />
+      </WrapperLayout>
     </Container>
   );
 }
@@ -17,5 +20,6 @@ function Footer() {
 export default Footer;
 
 const Container = styled.footer`
-  ${flex('space-between', '')}
+  ${flex('center', '')}
+  width: 100%;
 `;

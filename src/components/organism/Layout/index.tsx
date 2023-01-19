@@ -12,11 +12,9 @@ interface ILayoutProps {
 function Layout({ children }: ILayoutProps) {
   return (
     <Container>
-      <Wrapper>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </Wrapper>
+      <Header />
+      <Body>{children}</Body>
+      <Footer />
     </Container>
   );
 }
@@ -30,6 +28,6 @@ const Container = styled.div`
   background: ${theme.black};
 `;
 
-const Wrapper = styled.div`
+const Body = styled.main`
   width: 1020px;
 `;

@@ -28,6 +28,7 @@ export default CompanyInfo;
 const Wrapper = styled.section`
   ${flex('', '', 'column')}
   row-gap: 25px;
+  width: 100%;
 `;
 
 const Detail = styled.div`
