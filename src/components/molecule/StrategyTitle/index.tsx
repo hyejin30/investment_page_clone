@@ -2,6 +2,7 @@ import { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
 import Input from 'components/atoms/Input';
+import Button from 'components/atoms/Button';
 
 import { flex, theme } from 'styles';
 
@@ -13,7 +14,7 @@ function StrategyTitle({ value, onChange }: IStrategyTitleProps) {
   return (
     <Wrapper>
       <StyledInput name="strategyTitle" placeholder="전략 이름을 입력해주세요." value={value} onChange={onChange} />
-      <Button disabled={!value} type="button">
+      <Button disabled={!value} padding="0 30px" type="button" onClick={() => {}}>
         전략 저장
       </Button>
     </Wrapper>
@@ -65,14 +66,14 @@ const StyledInput = styled(Input)`
   }
 `;
 
-const Button = styled.button`
-  padding: 0 30px;
-  border-radius: 5px;
-  background: ${theme.orange};
-  white-space: nowrap;
+// const Button = styled.button`
+//   padding: 0 30px;
+//   border-radius: 5px;
+//   background: ${theme.orange};
+//   white-space: nowrap;
 
-  :disabled {
-    background: ${theme.button.disabled};
-    color: ${theme.black};
-  }
-`;
+//   :disabled {
+//     background: ${theme.button.disabled};
+//     color: ${theme.black};
+//   }
+// `;
