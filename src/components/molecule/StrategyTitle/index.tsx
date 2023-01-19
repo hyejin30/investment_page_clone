@@ -13,7 +13,7 @@ interface IStrategyTitleProps extends HTMLAttributes<HTMLInputElement> {
 function StrategyTitle({ value, onChange }: IStrategyTitleProps) {
   return (
     <Wrapper>
-      <StyledInput name="strategyTitle" placeholder="전략 이름을 입력해주세요." value={value} onChange={onChange} />
+      <TitleInput name="strategyTitle" placeholder="전략 이름을 입력해주세요." value={value} onChange={onChange} />
       <Button disabled={!value} padding="0 30px" type="button" onClick={() => {}}>
         전략 저장
       </Button>
@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   column-gap: 60px;
 `;
 
-const StyledInput = styled(Input)`
+const TitleInput = styled(Input)`
   width: 100%;
   font-size: 28px;
   font-weight: 700;
