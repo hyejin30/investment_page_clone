@@ -7,7 +7,7 @@ import { flex, theme } from 'styles';
 function MainHeader() {
   return (
     <Wrapper>
-      <Logo path="/" width={156} />
+      <Logo path="/" />
       <button type="button">초급</button>
       <button type="button">중급</button>
       <button type="button">고급</button>
