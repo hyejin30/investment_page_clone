@@ -1,6 +1,9 @@
 import { ReactNode } from 'react';
+import styled from 'styled-components';
+
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import { flex, theme } from 'styles';
 
 interface ILayoutProps {
   children: ReactNode;
@@ -8,12 +11,25 @@ interface ILayoutProps {
 
 function Layout({ children }: ILayoutProps) {
   return (
-    <div>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </div>
+    <Container>
+      <Wrapper>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </Wrapper>
+    </Container>
   );
 }
 
 export default Layout;
+
+const Container = styled.div`
+  ${flex('center', 'center', 'column')}
+  width: 100vw;
+  height: 100vh;
+  background: ${theme.black};
+`;
+
+const Wrapper = styled.div`
+  width: 1020px;
+`;
