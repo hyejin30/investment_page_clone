@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import Logo from 'components/Logo';
-import Text from 'components/Text';
+import Logo from 'components/atoms/Logo';
+import Text from 'components/atoms/Text';
 
 import { FOOTER_DETAIL_LIST } from '../constant';
 import { flex, theme } from 'styles';

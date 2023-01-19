@@ -1,5 +1,5 @@
-import Layout from 'components/Layout';
-import Text from 'components/Text';
+import Layout from 'components/organism/Layout';
+import Text from 'components/atoms/Text';
 
 function Allocation() {
   return (
