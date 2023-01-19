@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import CompanyInfo from './CompanyInfo';
 import CompanyLinks from './CompanyLinks';
-import WrapperLayout from 'components/organism/WrapperLayout';
+import WrapperLayout from 'components/organism/Layout/WrapperLayout';
 
 import { flex } from 'styles';
 
