@@ -5,12 +5,12 @@ import Text from 'components/atoms/Text';
 
 import { theme } from 'styles';
 
-interface IMenuProps {
+interface INavMenuProps {
   children: ReactNode;
   path: string;
 }
 
-function Menu({ children, path }: IMenuProps) {
+function NavMenu({ children, path }: INavMenuProps) {
   const { pathname } = useLocation();
 
   return (
@@ -22,4 +22,4 @@ function Menu({ children, path }: IMenuProps) {
   );
 }
 
-export default Menu;
+export default NavMenu;

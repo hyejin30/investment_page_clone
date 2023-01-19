@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { flex } from 'styles';
 
-import MainHeader from './MainHeader';
-import SubHeader from './SubHeader';
+import TopHeader from './TopHeader';
+import Nav from './Nav';
 
 function Header() {
   return (
     <Container>
-      <MainHeader />
-      <SubHeader />
+      <TopHeader />
+      <Nav />
     </Container>
   );
 }

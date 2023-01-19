@@ -4,7 +4,7 @@ import Logo from 'components/atoms/Logo';
 
 import { flex, theme } from 'styles';
 
-function MainHeader() {
+function TopHeader() {
   return (
     <Wrapper>
       <Logo path="/" />
@@ -16,7 +16,7 @@ function MainHeader() {
   );
 }
 
-export default MainHeader;
+export default TopHeader;
 
 const Wrapper = styled.div`
   ${flex('space-between', 'center')};
