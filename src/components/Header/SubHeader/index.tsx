@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Menu from '../Menu';
+import Menu from './Menu';
 
 import { flex } from 'styles';
 
