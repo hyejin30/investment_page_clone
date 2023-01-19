@@ -14,11 +14,13 @@ function NavMenu({ children, path }: INavMenuProps) {
   const { pathname } = useLocation();
 
   return (
-    <Link to={path}>
-      <Text.Medium color={pathname === path ? theme.red : theme.white} weight={400}>
-        {children}
-      </Text.Medium>
-    </Link>
+    <li>
+      <Link to={path}>
+        <Text.Medium color={pathname === path ? theme.red : theme.white} weight={400}>
+          {children}
+        </Text.Medium>
+      </Link>
+    </li>
   );
 }
 
