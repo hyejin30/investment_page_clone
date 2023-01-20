@@ -86,9 +86,12 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
     }
 
-    button,
-    label {
+    button {
         cursor: pointer;
+
+        :disabled {
+            cursor: default;
+        }
     };
 
     h1,

@@ -1,22 +1,23 @@
-import { HTMLAttributes } from 'react';
+import { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
 import Input from 'components/atoms/Input';
 import Button from 'components/atoms/Button';
 
-import { flex, theme } from 'styles';
+import { flex, fontSize, theme } from 'styles';
 
-interface IStrategyTitleProps extends HTMLAttributes<HTMLInputElement> {
+interface IStrategyTitleProps {
   value: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 function StrategyTitle({ value, onChange }: IStrategyTitleProps) {
   return (
     <Wrapper>
       <TitleInput name="strategyTitle" placeholder="전략 이름을 입력해주세요." value={value} onChange={onChange} />
-      <Button disabled={!value} padding="0 30px" type="button" onClick={() => {}}>
+      <SaveBtn disabled={!value} type="button" onClick={() => {}}>
         전략 저장
-      </Button>
+      </SaveBtn>
     </Wrapper>
   );
 }
@@ -30,7 +31,7 @@ const Wrapper = styled.div`
 
 const TitleInput = styled(Input)`
   width: 100%;
-  font-size: 28px;
+  font-size: ${fontSize.large};
   font-weight: 700;
   border-bottom: 1px solid ${theme.white};
   color: ${theme.white};
@@ -66,14 +67,6 @@ const TitleInput = styled(Input)`
   }
 `;
 
-// const Button = styled.button`
-//   padding: 0 30px;
-//   border-radius: 5px;
-//   background: ${theme.orange};
-//   white-space: nowrap;
-
-//   :disabled {
-//     background: ${theme.button.disabled};
-//     color: ${theme.black};
-//   }
-// `;
+const SaveBtn = styled(Button)`
+  padding: 0 30px;
+`;

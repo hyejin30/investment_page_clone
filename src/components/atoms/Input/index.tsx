@@ -10,11 +10,11 @@ interface IInputProps extends HTMLAttributes<HTMLInputElement> {
 }
 
 function Input(props: IInputProps) {
-  const { max, maxLength, type = 'text', ...otherProps } = props;
+  const { max, maxLength, type = 'text', ...restProps } = props;
 
   // number - max, 그 외 - maxLength 사용
-  if (type === 'number') return <input max={max} {...otherProps} />;
-  return <input maxLength={maxLength} {...otherProps} />;
+  if (type === 'number') return <input max={max} {...restProps} />;
+  return <input maxLength={maxLength} {...restProps} />;
 }
 
 export default Input;

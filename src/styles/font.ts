@@ -2,10 +2,15 @@
 
 import { css } from 'styled-components';
 
-const font = (size: number, weight: number, lineHeight: number = 0) => css`
+export const font = (size: number, weight: number, lineHeight: number = 0) => css`
   font-size: ${size}px;
   font-weight: ${weight};
   line-height: ${lineHeight || size * 1.5}px;
 `;
 
-export default font;
+export const fontSize = {
+  large: '28px',
+  medium: '18px',
+  regular: '14px',
+  small: '12px',
+};

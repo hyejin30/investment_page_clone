@@ -5,7 +5,7 @@ import Text from 'components/atoms/Text';
 import { FOOTER_LINK_LIST } from '../constant';
 import { theme, flex } from 'styles';
 
-function ComapanyLinks() {
+function CompanyLinks() {
   return (
     <List>
       {FOOTER_LINK_LIST.map((link) =>
@@ -23,7 +23,7 @@ function ComapanyLinks() {
   );
 }
 
-export default ComapanyLinks;
+export default CompanyLinks;
 
 const List = styled.section`
   ${flex('', '')}

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
-import { theme } from 'styles';
+import { fontSize, theme } from 'styles';
 
 interface ITextSmall {
   children: ReactNode;
@@ -24,7 +24,7 @@ interface ITextStyle {
 }
 
 const Text = styled.span<ITextStyle>`
-  font-size: 12px;
+  font-size: ${fontSize.small};
   font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
 `;

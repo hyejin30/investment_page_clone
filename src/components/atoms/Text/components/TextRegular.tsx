@@ -2,13 +2,13 @@ import { ReactNode } from 'react';
 import styled from 'styled-components';
 import { fontSize, theme } from 'styles';
 
-interface ITextMedium {
+interface ITextRegular {
   children: ReactNode;
   weight?: number;
   color?: string;
 }
 
-function TextMedium({ children, weight = 300, color = theme.white }: ITextMedium) {
+function TextRegular({ children, weight = 300, color = theme.white }: ITextRegular) {
   return (
     <Text color={color} weight={weight}>
       {children}
@@ -16,7 +16,7 @@ function TextMedium({ children, weight = 300, color = theme.white }: ITextMedium
   );
 }
 
-export default TextMedium;
+export default TextRegular;
 
 interface ITextStyle {
   weight: number;
@@ -24,7 +24,7 @@ interface ITextStyle {
 }
 
 const Text = styled.span<ITextStyle>`
-  font-size: ${fontSize.medium};
+  font-size: ${fontSize.regular};
   font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
 `;

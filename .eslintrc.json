@@ -22,6 +22,7 @@
     "react/self-closing-comp": "off",
     "react/no-array-index-key": "off",
     "react/require-default-props": "off",
+    "react/button-has-type": "off",
     "react/jsx-wrap-multilines": "off",
     "react/jsx-sort-props": [
       "error",
