@@ -14,7 +14,7 @@ interface IStrategyTitleProps {
 function StrategyTitle({ value, onChange }: IStrategyTitleProps) {
   return (
     <Wrapper>
-      <TitleInput name="strategyTitle" placeholder="전략 이름을 입력해주세요." value={value} onChange={onChange} />
+      <TitleInput placeholder="전략 이름을 입력해주세요." title="strategyTitle" value={value} onChange={onChange} />
       <SaveBtn disabled={!value} type="button" onClick={() => {}}>
         전략 저장
       </SaveBtn>

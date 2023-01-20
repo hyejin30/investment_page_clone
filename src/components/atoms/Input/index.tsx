@@ -1,7 +1,7 @@
 import { HTMLAttributes } from 'react';
 
 interface IInputProps extends HTMLAttributes<HTMLInputElement> {
-  name: HTMLInputElement['name'];
+  title: HTMLInputElement['title'];
   max?: number;
   maxLength?: number;
   placeholder?: string;

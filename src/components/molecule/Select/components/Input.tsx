@@ -7,7 +7,6 @@ import { flex, theme } from 'styles';
 
 interface ISelectInputProps {
   title: string;
-  name: string;
   value: string;
   onClick: (e: MouseEvent<HTMLDivElement>) => void;
 }
@@ -16,7 +15,7 @@ function SelectInput(props: ISelectInputProps) {
   const { onClick, ...restProps } = props;
 
   return (
-    <Wrapper onClick={onClick}>
+    <Wrapper title={restProps.title} onClick={onClick}>
       <StyledInput readOnly {...restProps} />
       <Arrow>
         <img alt="arrow down" src="/images/ic-arrow-down-orange.svg" />
