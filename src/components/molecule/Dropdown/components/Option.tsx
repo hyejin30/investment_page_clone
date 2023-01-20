@@ -7,12 +7,13 @@ import { theme } from 'styles';
 interface IOptionProps extends HTMLAttributes<HTMLLIElement> {
   children: ReactNode;
   isActive: boolean;
+  title: string;
   onClick: (e: MouseEvent<HTMLLIElement>) => void;
 }
 
-function Option({ children, isActive, onClick }: IOptionProps) {
+function Option({ children, isActive, title, onClick }: IOptionProps) {
   return (
-    <Container isActive={isActive} onClick={onClick}>
+    <Container isActive={isActive} title={title} onClick={onClick}>
       <Text.Regular>{children}</Text.Regular>
     </Container>
   );
