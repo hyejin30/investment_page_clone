@@ -1,6 +1,6 @@
 ## 프로젝트 소개
 투자 포트폴리오 사이트의 '자산 배분' 페이지를 클론한 프로젝트<br />
-(링크 : https://quantus.kr/alloc)
+(참고 페이지 : https://quantus.kr/alloc)
 
 <br />
 
