@@ -14,8 +14,10 @@ function CompanyInfo() {
         <Text.Medium color={theme.lightGray} weight={500}>
           주식회사 퀀터스테크놀로지스
         </Text.Medium>
-        {FOOTER_DETAIL_LIST.map((detail) => (
-          <Text.Small color={theme.lightGray}>{detail}</Text.Small>
+        {FOOTER_DETAIL_LIST.map((detail, idx) => (
+          <Text.Small key={`footer-detail-${idx}`} color={theme.lightGray}>
+            {detail}
+          </Text.Small>
         ))}
       </Detail>
       <Text.Small color={theme.darkGray}>© 2023 Quantus Technologies. All rights reserved.</Text.Small>

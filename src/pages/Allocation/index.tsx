@@ -10,10 +10,8 @@ import { flex } from 'styles';
 
 function Allocation() {
   const [strategyTitle, setStrategyTitle] = useState('');
-  const [showDropdown, setShowDropdown] = useState({
-    algo: false,
-    time: false,
-  });
+  const [showAlgorithmDropdown, setShowAlgorithmDropdown] = useState(false);
+  const [showCycleDropdown, setShowCycleDropdown] = useState(false);
 
   const [data] = useState({
     algo: '전략배분 (정적자산배분)',
@@ -26,8 +24,9 @@ function Allocation() {
   };
 
   const handleSelectInputClick = (e: MouseEvent<HTMLDivElement>) => {
-    const { title } = e.target as HTMLDivElement;
-    setShowDropdown((prev) => ({ ...prev, [title]: !prev[title as keyof typeof showDropdown] }));
+    const { title } = e.currentTarget;
+    if (title === 'algorithm') return setShowAlgorithmDropdown((prev) => !prev);
+    if (title === 'cycle') return setShowCycleDropdown((prev) => !prev);
   };
 
   return (
@@ -39,13 +38,13 @@ function Allocation() {
           <Dropdown>
             <Dropdown.Trigger>
               <Select>
-                <Select.Label htmlFor="algo">자산배분 알고리즘</Select.Label>
-                <Select.Input name="algo" title="algo" value={data.algo} onClick={handleSelectInputClick} />
+                <Select.Label htmlFor="algorithm">자산배분 알고리즘</Select.Label>
+                <Select.Input title="algorithm" value={data.algo} onClick={handleSelectInputClick} />
               </Select>
             </Dropdown.Trigger>
-            <Dropdown.List isOpen={showDropdown.algo}>
-              {ALLOC_ALGORITHM_LIST.map((item) => (
-                <Dropdown.Option currentValue={data.algo} onClick={() => {}}>
+            <Dropdown.List isOpen={showAlgorithmDropdown}>
+              {ALLOC_ALGORITHM_LIST.map((item, idx) => (
+                <Dropdown.Option key={`option-algorithm-${idx}`} isActive={data.algo === item} onClick={() => {}}>
                   {item}
                 </Dropdown.Option>
               ))}
@@ -54,13 +53,13 @@ function Allocation() {
           <Dropdown>
             <Dropdown.Trigger>
               <Select>
-                <Select.Label htmlFor="time">주기 리밸런싱</Select.Label>
-                <Select.Input name="time" title="time" value={data.time} onClick={handleSelectInputClick} />
+                <Select.Label htmlFor="cycle">주기 리밸런싱</Select.Label>
+                <Select.Input title="cycle" value={data.time} onClick={handleSelectInputClick} />
               </Select>
             </Dropdown.Trigger>
-            <Dropdown.List isOpen={showDropdown.time}>
-              {ALLOC_CYCLE_LIST.map((item) => (
-                <Dropdown.Option currentValue={data.time} onClick={() => {}}>
+            <Dropdown.List isOpen={showCycleDropdown}>
+              {ALLOC_CYCLE_LIST.map((item, idx) => (
+                <Dropdown.Option key={`option-cycle-${idx}`} isActive={data.time === item} onClick={() => {}}>
                   {item}
                 </Dropdown.Option>
               ))}

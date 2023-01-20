@@ -8,13 +8,13 @@ import { theme, flex } from 'styles';
 function CompanyLinks() {
   return (
     <List>
-      {FOOTER_LINK_LIST.map((link) =>
+      {FOOTER_LINK_LIST.map((link, idx) =>
         link.key === 'cafe' ? (
-          <UnderLineLink href={link.path}>
+          <UnderLineLink key={`footer-link-${idx}`} href={link.path}>
             <Text.Small color={theme.lightGray}>{link.name}</Text.Small>
           </UnderLineLink>
         ) : (
-          <a href={link.path}>
+          <a key={`footer-link-${idx}`} href={link.path}>
             <Text.Small color={theme.darkGray}>{link.name}</Text.Small>
           </a>
         ),
