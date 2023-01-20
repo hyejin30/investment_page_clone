@@ -1,19 +1,23 @@
+import { MouseEvent } from 'react';
 import styled from 'styled-components';
 
 import { Input } from 'components/atoms';
 
 import { flex, theme } from 'styles';
-import { HTMLAttributes } from 'react';
 
-interface ISelectInputProps extends HTMLAttributes<HTMLInputElement> {
+interface ISelectInputProps {
+  title: string;
   name: string;
   value: string;
+  onClick: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
 function SelectInput(props: ISelectInputProps) {
+  const { onClick, ...restProps } = props;
+
   return (
-    <Wrapper>
-      <StyledInput readOnly {...props} />
+    <Wrapper onClick={onClick}>
+      <StyledInput readOnly {...restProps} />
       <Arrow>
         <img alt="arrow down" src="/images/ic-arrow-down-orange.svg" />
       </Arrow>
@@ -29,14 +33,17 @@ const Wrapper = styled.div`
   padding: 12px 20px;
   border: 1px solid ${theme.border.lightGray};
   border-radius: 5px;
+  cursor: pointer;
 `;
 
 const StyledInput = styled(Input)`
   width: 100%;
   text-align: center;
+  cursor: pointer;
 `;
 
 const Arrow = styled.div`
   width: 10px;
   height: 10px;
+  cursor: pointer;
 `;
