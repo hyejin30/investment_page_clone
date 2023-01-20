@@ -1,5 +1,9 @@
-## 퀀터스 테크놀로지 FE 사전 과제 
-전략 배분 기능 구현 (링크 : https://quantus.kr/alloc)
+## 프로젝트 소개
+투자 포트폴리오 사이트의 '자산 배분' 페이지를 클론한 프로젝트
+(링크 : https://quantus.kr/alloc)
+
+## 선정 이유
+Select, Dropdown 등의 컴포넌트 재사용을 연습하기 위해 선정
 
 <br />
 
