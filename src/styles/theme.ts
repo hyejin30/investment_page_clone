@@ -7,6 +7,7 @@ const theme = {
   orange: '#ec6126',
   border: {
     darkGray: '#595959',
+    lightGray: '#9f9f9f',
   },
   button: {
     disabled: '#3e3e3e',

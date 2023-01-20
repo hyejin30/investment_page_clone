@@ -27,7 +27,7 @@ const Wrapper = styled.div`
   ${flex('', '')}
   width: 100%;
   padding: 12px 20px;
-  border: 1px solid ${theme.lightGray};
+  border: 1px solid ${theme.border.lightGray};
   border-radius: 5px;
 `;
 
