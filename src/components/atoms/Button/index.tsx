@@ -25,12 +25,12 @@ type IButtonStyle = Omit<IButtonProps, 'children'>;
 
 const StyledButton = styled.button<IButtonStyle>`
   border-radius: 5px;
-  background: ${theme.orange};
+  background: ${theme.background.orange};
   color: ${theme.black};
   white-space: nowrap;
 
   :disabled {
-    background: ${theme.button.disabled};
+    background: ${theme.background.lightGray};
     color: ${theme.black};
   }
 `;

@@ -1,20 +1,17 @@
 import { HTMLAttributes, ReactNode } from 'react';
-import styled from 'styled-components';
-import { fontSize, theme } from 'styles';
+import Text from 'components/atoms/Text';
 
 interface ILabelProps extends HTMLAttributes<HTMLLabelElement> {
   children: ReactNode;
   htmlFor: string;
 }
 
-function Label(props: ILabelProps) {
-  const { children, ...restProps } = props;
-  return <StyledLabel {...restProps}>{children}</StyledLabel>;
+function Label({ children, htmlFor }: ILabelProps) {
+  return (
+    <label htmlFor={htmlFor}>
+      <Text.Regular weight={400}>{children}</Text.Regular>
+    </label>
+  );
 }
 
 export default Label;
-
-const StyledLabel = styled.label`
-  font-size: ${fontSize.regular};
-  color: ${theme.white};
-`;
