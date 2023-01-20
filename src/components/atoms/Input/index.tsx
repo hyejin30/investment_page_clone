@@ -5,6 +5,7 @@ interface IInputProps extends HTMLAttributes<HTMLInputElement> {
   max?: number;
   maxLength?: number;
   placeholder?: string;
+  readOnly?: boolean;
   type?: 'text' | 'number' | 'email' | 'password';
   value: string;
 }
