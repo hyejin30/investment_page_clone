@@ -1,21 +1,18 @@
-import { HTMLAttributes } from 'react';
+import Layout from './components/Layout';
+import Label from 'components/atoms/Label';
+import Contents from './components/Contents';
+import Value from './components/Value';
+import ValueNum from './components/ValueNum';
+import Right from './components/Right';
+import SubMessage from './components/SubMessage';
 
-interface IInputProps extends HTMLAttributes<HTMLInputElement> {
-  title: HTMLInputElement['title'];
-  max?: number;
-  maxLength?: number;
-  placeholder?: string;
-  readOnly?: boolean;
-  type?: 'text' | 'number' | 'email' | 'password';
-  value: string;
-}
-
-function Input(props: IInputProps) {
-  const { max, maxLength, type = 'text', ...restProps } = props;
-
-  // number - max, 그 외 - maxLength 사용
-  if (type === 'number') return <input max={max} {...restProps} />;
-  return <input maxLength={maxLength} {...restProps} />;
-}
+const Input = Object.assign(Layout, {
+  Label,
+  Contents,
+  Value,
+  ValueNum,
+  Right,
+  SubMessage,
+});
 
 export default Input;
