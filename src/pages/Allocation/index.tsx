@@ -1,9 +1,11 @@
 import { ChangeEvent, MouseEvent, useState } from 'react';
+import styled from 'styled-components';
 
 import { Text } from 'components/atoms';
 import { Dropdown, Select, StrategyTitle } from 'components/molecule';
 import { Layout } from 'components/organism';
-import styled from 'styled-components';
+
+import { ALLOC_ALGORITHM_LIST, ALLOC_CYCLE_LIST } from './data';
 import { flex } from 'styles';
 
 function Allocation() {
@@ -14,8 +16,8 @@ function Allocation() {
   });
 
   const [data] = useState({
-    algo: '',
-    time: '',
+    algo: '전략배분 (정적자산배분)',
+    time: '월별',
     band: '',
   });
 
@@ -34,27 +36,35 @@ function Allocation() {
         <StrategyTitle value={strategyTitle} onChange={handleStrategyTitleChange} />
         <Section>
           <Text.Medium>자산배분 설정</Text.Medium>
-          <Dropdown.Trigger>
-            <Select>
-              <Select.Label htmlFor="algo">자산배분 알고리즘</Select.Label>
-              <Select.Input name="algo" title="algo" value={data.algo} onClick={handleSelectInputClick} />
-            </Select>
-          </Dropdown.Trigger>
-          <Dropdown isOpen>
-            {['자산1', '자산2'].map((item) => (
-              <Dropdown.Option>{item}</Dropdown.Option>
-            ))}
+          <Dropdown>
+            <Dropdown.Trigger>
+              <Select>
+                <Select.Label htmlFor="algo">자산배분 알고리즘</Select.Label>
+                <Select.Input name="algo" title="algo" value={data.algo} onClick={handleSelectInputClick} />
+              </Select>
+            </Dropdown.Trigger>
+            <Dropdown.List isOpen={showDropdown.algo}>
+              {ALLOC_ALGORITHM_LIST.map((item) => (
+                <Dropdown.Option currentValue={data.algo} onClick={() => {}}>
+                  {item}
+                </Dropdown.Option>
+              ))}
+            </Dropdown.List>
           </Dropdown>
-          <Dropdown.Trigger>
-            <Select>
-              <Select.Label htmlFor="time">주기 리밸런싱</Select.Label>
-              <Select.Input name="time" title="time" value={data.time} onClick={handleSelectInputClick} />
-            </Select>
-          </Dropdown.Trigger>
-          <Dropdown isOpen={showDropdown.time}>
-            {['자산1', '자산2'].map((item) => (
-              <Dropdown.Option>{item}</Dropdown.Option>
-            ))}
+          <Dropdown>
+            <Dropdown.Trigger>
+              <Select>
+                <Select.Label htmlFor="time">주기 리밸런싱</Select.Label>
+                <Select.Input name="time" title="time" value={data.time} onClick={handleSelectInputClick} />
+              </Select>
+            </Dropdown.Trigger>
+            <Dropdown.List isOpen={showDropdown.time}>
+              {ALLOC_CYCLE_LIST.map((item) => (
+                <Dropdown.Option currentValue={data.time} onClick={() => {}}>
+                  {item}
+                </Dropdown.Option>
+              ))}
+            </Dropdown.List>
           </Dropdown>
         </Section>
       </Wrapper>
