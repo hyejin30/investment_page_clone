@@ -16,10 +16,16 @@ function SelectInput(props: ISelectInputProps) {
 
   return (
     <Wrapper title={restProps.title} onClick={onClick}>
-      <StyledInput readOnly {...restProps} />
-      <Arrow>
-        <img alt="arrow down" src="/images/ic-arrow-down-orange.svg" />
-      </Arrow>
+      <Input>
+        <Input.Contents>
+          <InputValue readOnly {...restProps} />
+          <Input.Right>
+            <Arrow>
+              <img alt="arrow down" src="/images/ic-arrow-down-orange.svg" />
+            </Arrow>
+          </Input.Right>
+        </Input.Contents>
+      </Input>
     </Wrapper>
   );
 }
@@ -36,8 +42,7 @@ const Wrapper = styled.div`
   cursor: pointer;
 `;
 
-const StyledInput = styled(Input)`
-  width: 100%;
+const InputValue = styled(Input.Value)`
   text-align: center;
   color: ${theme.white};
   cursor: pointer;
@@ -45,6 +50,7 @@ const StyledInput = styled(Input)`
 
 const Arrow = styled.div`
   position: absolute;
+  top: 12px;
   right: 20px;
   width: 10px;
   height: 10px;

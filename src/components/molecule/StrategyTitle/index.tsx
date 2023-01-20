@@ -7,14 +7,17 @@ import Button from 'components/atoms/Button';
 import { flex, fontSize, theme } from 'styles';
 
 interface IStrategyTitleProps {
+  title: string;
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-function StrategyTitle({ value, onChange }: IStrategyTitleProps) {
+function StrategyTitle({ title, value, onChange }: IStrategyTitleProps) {
   return (
     <Wrapper>
-      <TitleInput placeholder="전략 이름을 입력해주세요." title="strategyTitle" value={value} onChange={onChange} />
+      <Input>
+        <InputValue placeholder="전략 이름을 입력해주세요." title={title} value={value} onChange={onChange} />
+      </Input>
       <SaveBtn disabled={!value} type="button" onClick={() => {}}>
         전략 저장
       </SaveBtn>
@@ -34,42 +37,11 @@ const Wrapper = styled.section`
   z-index: 1;
 `;
 
-const TitleInput = styled(Input)`
-  width: 100%;
+const InputValue = styled(Input.Value)`
   border-bottom: 1px solid ${theme.white};
   font-size: ${fontSize.large};
   font-weight: 700;
   color: ${theme.white};
-
-  ::placeholder {
-    color: ${theme.white};
-  }
-
-  :focus {
-    ::-webkit-input-placeholder,
-    textarea:focus::-webkit-input-placeholder {
-      /* WebKit browsers */
-      color: transparent;
-    }
-
-    :-moz-placeholder,
-    textarea:focus:-moz-placeholder {
-      /* Mozilla Firefox 4 to 18 */
-      color: transparent;
-    }
-
-    ::-moz-placeholder,
-    textarea:focus::-moz-placeholder {
-      /* Mozilla Firefox 19+ */
-      color: transparent;
-    }
-
-    :-ms-input-placeholder,
-    textarea:focus:-ms-input-placeholder {
-      /* Internet Explorer 10+ */
-      color: transparent;
-    }
-  }
 `;
 
 const SaveBtn = styled(Button)`
