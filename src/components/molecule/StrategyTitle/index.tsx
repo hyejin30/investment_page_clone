@@ -24,16 +24,21 @@ function StrategyTitle({ value, onChange }: IStrategyTitleProps) {
 
 export default StrategyTitle;
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   ${flex('', '')}
   column-gap: 60px;
+  position: sticky;
+  top: 133px;
+  padding: 30px 0 20px;
+  background: ${theme.black};
+  z-index: 1;
 `;
 
 const TitleInput = styled(Input)`
   width: 100%;
+  border-bottom: 1px solid ${theme.white};
   font-size: ${fontSize.large};
   font-weight: 700;
-  border-bottom: 1px solid ${theme.white};
   color: ${theme.white};
 
   ::placeholder {
