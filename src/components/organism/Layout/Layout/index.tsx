@@ -22,7 +22,7 @@ function Layout({ children }: ILayoutProps) {
 export default Layout;
 
 const Container = styled.div`
-  ${flex('center', 'center', 'column')}
+  ${flex('', 'center', 'column')}
   width: 100vw;
   height: 100vh;
   background: ${theme.black};
@@ -30,5 +30,4 @@ const Container = styled.div`
 
 const Body = styled.main`
   width: 1020px;
-  padding: 40px 0;
 `;
