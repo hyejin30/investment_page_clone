@@ -12,14 +12,14 @@ Select, Dropdown 등의 컴포넌트 재사용을 연습하기 위해 선정
 ## 프로젝트 생성
 
 ```
-yarn create react-app clone_quantus --template typescript
+yarn create react-app investment_page_clone --template typescript
 ```
 
 <br />
 
 ## 프로젝트 클론 및 패키지 설치
 ```
-git clone https://github.com/hyejin30/clone_quantus
+git clone https://github.com/hyejin30/investment_page_clone
 yarn install
 ```
 
