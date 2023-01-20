@@ -8,7 +8,7 @@ interface ITextMedium {
   color?: string;
 }
 
-function TextMedium({ children, weight = 300, color = theme.white }: ITextMedium) {
+function TextMedium({ children, weight = 700, color = theme.white }: ITextMedium) {
   return (
     <Text color={color} weight={weight}>
       {children}
