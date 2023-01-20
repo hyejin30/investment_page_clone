@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Input } from 'components/atoms';
 
-import { flex, theme } from 'styles';
+import { flex } from 'styles';
 
 interface ISelectInputProps {
   title: string;
@@ -18,7 +18,7 @@ function SelectInput(props: ISelectInputProps) {
     <Wrapper title={restProps.title} onClick={onClick}>
       <Input>
         <Input.Contents>
-          <InputValue readOnly {...restProps} />
+          <Input.Value readOnly {...restProps} />
           <Input.Right>
             <Arrow>
               <img alt="arrow down" src="/images/ic-arrow-down-orange.svg" />
@@ -35,17 +35,11 @@ export default SelectInput;
 const Wrapper = styled.div`
   ${flex('', '')}
   position: relative;
-  width: 100%;
-  padding: 12px 20px;
-  border: 1px solid ${theme.border.lightGray};
-  border-radius: 5px;
   cursor: pointer;
-`;
 
-const InputValue = styled(Input.Value)`
-  text-align: center;
-  color: ${theme.white};
-  cursor: pointer;
+  input {
+    cursor: pointer;
+  }
 `;
 
 const Arrow = styled.div`

@@ -89,11 +89,12 @@ function Allocation() {
           </Dropdown>
           <Input>
             <Input.Label htmlFor="band">밴드 리밸런싱</Input.Label>
-            <NumberInput>
-              <NumberInputValue
+            <Input.Contents>
+              <Input.Value
                 max={100}
                 min={0}
                 placeholder="밴드 리밸런싱 기준을 입력해주세요."
+                textAlign="center"
                 title="band"
                 type="number"
                 value={data.band}
@@ -102,7 +103,7 @@ function Allocation() {
               <Input.Right>
                 <Percentage>%</Percentage>
               </Input.Right>
-            </NumberInput>
+            </Input.Contents>
             <Input.SubMessage>0 ~ 100 까지 입력할 수 있습니다. (0 입력시 비활성화)</Input.SubMessage>
           </Input>
         </Section>
@@ -122,16 +123,6 @@ const Section = styled.section`
   ${flex('', '', 'column')};
   row-gap: 30px;
   width: 640px;
-`;
-
-const NumberInput = styled(Input.Contents)`
-  padding: 12px 20px;
-  border: 1px solid ${theme.border.lightGray};
-  border-radius: 5px;
-`;
-
-const NumberInputValue = styled(Input.Value)`
-  text-align: center;
 `;
 
 const Percentage = styled.span`

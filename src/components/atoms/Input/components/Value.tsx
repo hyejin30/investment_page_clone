@@ -10,19 +10,21 @@ interface IValueProps extends HTMLAttributes<HTMLInputElement> {
   placeholder?: string;
   readOnly?: boolean;
   type?: 'text' | 'number' | 'email' | 'password';
+  textAlign?: 'center' | 'left' | 'right';
   value: string;
 }
 
 function Value(props: IValueProps) {
-  const { type = 'text', ...restProps } = props;
-  return <StyledInput type={type} {...restProps} />;
+  const { type = 'text', textAlign = 'center', ...restProps } = props;
+  return <StyledInput textAlign={textAlign} type={type} {...restProps} />;
 }
 
 export default Value;
 
-const StyledInput = styled.input`
+const StyledInput = styled.input<Partial<IValueProps>>`
   width: 100%;
   color: ${theme.white};
+  text-align: ${(props) => props.textAlign};
 
   ::placeholder {
     color: ${theme.white};

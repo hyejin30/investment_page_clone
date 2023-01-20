@@ -16,7 +16,13 @@ function StrategyTitle({ title, value, onChange }: IStrategyTitleProps) {
   return (
     <Wrapper>
       <Input>
-        <InputValue placeholder="전략 이름을 입력해주세요." title={title} value={value} onChange={onChange} />
+        <InputValue
+          placeholder="전략 이름을 입력해주세요."
+          textAlign="left"
+          title={title}
+          value={value}
+          onChange={onChange}
+        />
       </Input>
       <SaveBtn disabled={!value} type="button" onClick={() => {}}>
         전략 저장
