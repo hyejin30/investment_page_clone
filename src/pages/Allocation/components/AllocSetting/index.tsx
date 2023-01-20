@@ -40,82 +40,75 @@ function AllocSetting() {
 
   return (
     <Container>
-      <Wrapper>
-        <Text.Medium>자산배분 설정</Text.Medium>
-        <Dropdown>
-          <Dropdown.Trigger>
-            <Select>
-              <Select.Label htmlFor="algorithm">자산배분 알고리즘</Select.Label>
-              <Select.Input title="algorithm" value={data.algorithm} onClick={handleSelectInputClick} />
-            </Select>
-          </Dropdown.Trigger>
-          <Dropdown.List isOpen={showAlgorithmDropdown}>
-            {ALLOC_ALGORITHM_LIST.map((item, idx) => (
-              <Dropdown.Option
-                key={`option-algorithm-${idx}`}
-                isActive={data.algorithm === item}
-                title="algorithm"
-                onClick={handleDropdownOptionClick}
-              >
-                {item}
-              </Dropdown.Option>
-            ))}
-          </Dropdown.List>
-        </Dropdown>
-        <Dropdown>
-          <Dropdown.Trigger>
-            <Select>
-              <Select.Label htmlFor="cycle">주기 리밸런싱</Select.Label>
-              <Select.Input title="cycle" value={data.cycle} onClick={handleSelectInputClick} />
-            </Select>
-          </Dropdown.Trigger>
-          <Dropdown.List isOpen={showCycleDropdown}>
-            {ALLOC_CYCLE_LIST.map((item, idx) => (
-              <Dropdown.Option
-                key={`option-cycle-${idx}`}
-                isActive={data.cycle === item}
-                title="cycle"
-                onClick={handleDropdownOptionClick}
-              >
-                {item}
-              </Dropdown.Option>
-            ))}
-          </Dropdown.List>
-        </Dropdown>
-        <Input>
-          <Input.Label htmlFor="band">밴드 리밸런싱</Input.Label>
-          <Input.Contents>
-            <Input.Value
-              max={100}
-              min={0}
-              placeholder="밴드 리밸런싱 기준을 입력해주세요."
-              textAlign="center"
-              title="band"
-              type="number"
-              value={data.band}
-              onChange={handleInputChange}
-            />
-            <Input.Right>
-              <Percentage>%</Percentage>
-            </Input.Right>
-          </Input.Contents>
-          <Input.SubMessage>0 ~ 100 까지 입력할 수 있습니다. (0 입력시 비활성화)</Input.SubMessage>
-        </Input>
-      </Wrapper>
+      <Text.Medium>자산배분 설정</Text.Medium>
+      <Dropdown>
+        <Dropdown.Trigger>
+          <Select>
+            <Select.Label htmlFor="algorithm">자산배분 알고리즘</Select.Label>
+            <Select.Input title="algorithm" value={data.algorithm} onClick={handleSelectInputClick} />
+          </Select>
+        </Dropdown.Trigger>
+        <Dropdown.List isOpen={showAlgorithmDropdown}>
+          {ALLOC_ALGORITHM_LIST.map((item, idx) => (
+            <Dropdown.Option
+              key={`option-algorithm-${idx}`}
+              isActive={data.algorithm === item}
+              title="algorithm"
+              onClick={handleDropdownOptionClick}
+            >
+              {item}
+            </Dropdown.Option>
+          ))}
+        </Dropdown.List>
+      </Dropdown>
+      <Dropdown>
+        <Dropdown.Trigger>
+          <Select>
+            <Select.Label htmlFor="cycle">주기 리밸런싱</Select.Label>
+            <Select.Input title="cycle" value={data.cycle} onClick={handleSelectInputClick} />
+          </Select>
+        </Dropdown.Trigger>
+        <Dropdown.List isOpen={showCycleDropdown}>
+          {ALLOC_CYCLE_LIST.map((item, idx) => (
+            <Dropdown.Option
+              key={`option-cycle-${idx}`}
+              isActive={data.cycle === item}
+              title="cycle"
+              onClick={handleDropdownOptionClick}
+            >
+              {item}
+            </Dropdown.Option>
+          ))}
+        </Dropdown.List>
+      </Dropdown>
+      <Input>
+        <Input.Label htmlFor="band">밴드 리밸런싱</Input.Label>
+        <Input.Contents>
+          <Input.Value
+            max={100}
+            min={0}
+            placeholder="밴드 리밸런싱 기준을 입력해주세요."
+            textAlign="center"
+            title="band"
+            type="number"
+            value={data.band}
+            onChange={handleInputChange}
+          />
+          <Input.Right>
+            <Percentage>%</Percentage>
+          </Input.Right>
+        </Input.Contents>
+        <Input.SubMessage>0 ~ 100 까지 입력할 수 있습니다. (0 입력시 비활성화)</Input.SubMessage>
+      </Input>
     </Container>
   );
 }
 
 export default AllocSetting;
 
-const Container = styled.section`
-  width: 100%;
-`;
-
-const Wrapper = styled.div`
+const Container = styled.div`
   ${flex('', '', 'column')};
   row-gap: 30px;
-  width: 640px;
 `;
 
 const Percentage = styled.span`

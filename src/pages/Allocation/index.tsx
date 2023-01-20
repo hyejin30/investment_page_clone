@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 import { StrategyTitle } from 'components/molecule';
 import { Layout } from 'components/organism';
+import AllocSetting from './components/AllocSetting';
+import AssetClass from './components/AssetClass';
 
 import { flex } from 'styles';
-import AllocSetting from './components/AllocSetting';
 
 function Allocation() {
   const [strategyTitle, setStrategyTitle] = useState('');
@@ -17,17 +18,27 @@ function Allocation() {
 
   return (
     <Layout>
-      <Wrapper>
+      <Container>
         <StrategyTitle title="strategyTitle" value={strategyTitle} onChange={handleInputChange} />
-        <AllocSetting />
-      </Wrapper>
+        <Wrapper>
+          <AllocSetting />
+          <AssetClass />
+        </Wrapper>
+      </Container>
     </Layout>
   );
 }
 
 export default Allocation;
 
+const Container = styled.div`
+  ${flex('', '', 'column')};
+  row-gap: 60px;
+  padding-bottom: 100px;
+`;
+
 const Wrapper = styled.div`
   ${flex('', '', 'column')};
+  width: 640px;
   row-gap: 60px;
 `;
