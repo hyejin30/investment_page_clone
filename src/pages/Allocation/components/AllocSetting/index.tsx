@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Input, Text } from 'components/atoms';
 import { Dropdown, Select } from 'components/molecule';
 
-import { ALLOC_ALGORITHM_LIST, ALLOC_CYCLE_LIST } from 'pages/Allocation/data';
+import { ALLOC_ALGORITHM_LIST, ALLOC_CYCLE_LIST } from './data';
 import { flex, theme } from 'styles';
 
 function AllocSetting() {

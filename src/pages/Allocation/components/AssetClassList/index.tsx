@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Button, Input, Text } from 'components/atoms';
 import { Dropdown, Select } from 'components/molecule';
 
+import { STOCK_LIST } from './data';
 import { flex, theme } from 'styles';
 import { IAssetClass } from 'types/allocation';
 
@@ -62,14 +63,14 @@ function AssetClassList() {
         <AssetClass key={`dropdown-assetClass-${idx}`}>
           <Dropdown>
             <Dropdown.List isOpen={showDropdown[`assetClass-${idx}`]}>
-              {['동화 약품', '경방'].map((item, optionIdx) => (
+              {STOCK_LIST.map((item, optionIdx) => (
                 <Dropdown.Option
                   key={`option-asset-${optionIdx}`}
                   isActive={false}
                   title={`assetClass-${idx}`}
                   onClick={handleDropdownOptionClick}
                 >
-                  {item}
+                  {item.label}
                 </Dropdown.Option>
               ))}
             </Dropdown.List>
