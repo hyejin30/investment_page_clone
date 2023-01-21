@@ -11,7 +11,7 @@ interface IValueProps extends HTMLAttributes<HTMLInputElement> {
   readOnly?: boolean;
   type?: 'text' | 'number' | 'email' | 'password';
   textAlign?: 'center' | 'left' | 'right';
-  value: string;
+  value: string | number;
 }
 
 function Value(props: IValueProps) {
