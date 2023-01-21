@@ -25,7 +25,7 @@ type IButtonStyle = Omit<IButtonProps, 'children'>;
 
 const StyledButton = styled.button<IButtonStyle>`
   border-radius: 5px;
-  background: ${theme.background.orange};
+  background: ${theme.orange};
   color: ${theme.black};
   white-space: nowrap;
 

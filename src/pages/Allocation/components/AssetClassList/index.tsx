@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Button, Input, Text } from 'components/atoms';
 import { Dropdown, Select } from 'components/molecule';
 
+import { STOCK_LIST } from './data';
 import { flex, theme } from 'styles';
 import { IAssetClass } from 'types/allocation';
 
@@ -62,14 +63,14 @@ function AssetClassList() {
         <AssetClass key={`dropdown-assetClass-${idx}`}>
           <Dropdown>
             <Dropdown.List isOpen={showDropdown[`assetClass-${idx}`]}>
-              {['동화 약품', '경방'].map((item, optionIdx) => (
+              {STOCK_LIST.map((item, optionIdx) => (
                 <Dropdown.Option
                   key={`option-asset-${optionIdx}`}
                   isActive={false}
                   title={`assetClass-${idx}`}
                   onClick={handleDropdownOptionClick}
                 >
-                  {item}
+                  {item.label}
                 </Dropdown.Option>
               ))}
             </Dropdown.List>
@@ -82,20 +83,18 @@ function AssetClassList() {
           </Dropdown>
           <Input>
             <Input.Label htmlFor={`assetClass-${idx}`}>비중</Input.Label>
-            <Input.Contents>
-              <Input.Value
-                max={100}
-                min={0}
-                textAlign="center"
-                title={`assetClass-${idx}`}
-                type="number"
-                value={assetClass.ratio}
-                onChange={handleRatioInputChange}
-              />
-              <Input.Right>
-                <Percentage>%</Percentage>
-              </Input.Right>
-            </Input.Contents>
+            <Input.Value
+              max={100}
+              min={0}
+              textAlign="center"
+              title={`assetClass-${idx}`}
+              type="number"
+              value={assetClass.ratio}
+              onChange={handleRatioInputChange}
+            />
+            <Input.Right>
+              <Percentage>%</Percentage>
+            </Input.Right>
             <Input.SubMessage>0 ~ 100 까지 입력할 수 있습니다.</Input.SubMessage>
           </Input>
         </AssetClass>
@@ -118,6 +117,9 @@ const ClassAddBtn = styled(Button)`
 `;
 
 const Percentage = styled.span`
+  position: absolute;
+  top: 45px;
+  right: 28px;
   color: ${theme.white};
 `;
 
