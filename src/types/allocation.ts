@@ -3,4 +3,7 @@ export interface IAllocation {
   cycle: string; // TODO: data -> union
 }
 
-export type IAllocationKeys = keyof IAllocation;
+export interface IAssetClass {
+  name: string;
+  ratio: number;
+}
