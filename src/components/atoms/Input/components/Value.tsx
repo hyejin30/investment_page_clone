@@ -37,7 +37,7 @@ const StyledInput = styled.input<Partial<IValueProps>>`
     border: 1px solid ${theme.white};
   }
 
-  :focus-within {
+  :focus {
     border: 1px solid ${theme.orange};
   }
 
