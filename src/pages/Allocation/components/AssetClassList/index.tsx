@@ -7,7 +7,7 @@ import { Dropdown, Select } from 'components/molecule';
 import { flex, theme } from 'styles';
 import { IAssetClass } from 'types/allocation';
 
-function AssetClass() {
+function AssetClassList() {
   const [assetClassList, setAssetClassList] = useState<IAssetClass[]>([]);
   const [showDropdown, setShowDropdown] = useState<{ [key: string]: boolean }>({});
 
@@ -59,8 +59,8 @@ function AssetClass() {
     <Container>
       <Text.Medium>자산군 추가</Text.Medium>
       {assetClassList?.map((assetClass, idx) => (
-        <>
-          <Dropdown key={`dropdown-assetClass-${idx}`}>
+        <AssetClass key={`dropdown-assetClass-${idx}`}>
+          <Dropdown>
             <Dropdown.List isOpen={showDropdown[`assetClass-${idx}`]}>
               {['동화 약품', '경방'].map((item, optionIdx) => (
                 <Dropdown.Option
@@ -98,14 +98,14 @@ function AssetClass() {
             </Input.Contents>
             <Input.SubMessage>0 ~ 100 까지 입력할 수 있습니다.</Input.SubMessage>
           </Input>
-        </>
+        </AssetClass>
       ))}
       <ClassAddBtn onClick={handleClassAddBtnClick}>추가하기</ClassAddBtn>
     </Container>
   );
 }
 
-export default AssetClass;
+export default AssetClassList;
 
 const Container = styled.div`
   ${flex('', '', 'column')};
@@ -119,4 +119,9 @@ const ClassAddBtn = styled(Button)`
 
 const Percentage = styled.span`
   color: ${theme.white};
+`;
+
+const AssetClass = styled.div`
+  ${flex('', '', 'column')};
+  row-gap: 30px;
 `;
