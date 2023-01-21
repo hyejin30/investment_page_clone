@@ -83,20 +83,18 @@ function AssetClassList() {
           </Dropdown>
           <Input>
             <Input.Label htmlFor={`assetClass-${idx}`}>비중</Input.Label>
-            <Input.Contents>
-              <Input.Value
-                max={100}
-                min={0}
-                textAlign="center"
-                title={`assetClass-${idx}`}
-                type="number"
-                value={assetClass.ratio}
-                onChange={handleRatioInputChange}
-              />
-              <Input.Right>
-                <Percentage>%</Percentage>
-              </Input.Right>
-            </Input.Contents>
+            <Input.Value
+              max={100}
+              min={0}
+              textAlign="center"
+              title={`assetClass-${idx}`}
+              type="number"
+              value={assetClass.ratio}
+              onChange={handleRatioInputChange}
+            />
+            <Input.Right>
+              <Percentage>%</Percentage>
+            </Input.Right>
             <Input.SubMessage>0 ~ 100 까지 입력할 수 있습니다.</Input.SubMessage>
           </Input>
         </AssetClass>
@@ -119,6 +117,9 @@ const ClassAddBtn = styled(Button)`
 `;
 
 const Percentage = styled.span`
+  position: absolute;
+  top: 45px;
+  right: 28px;
   color: ${theme.white};
 `;
 

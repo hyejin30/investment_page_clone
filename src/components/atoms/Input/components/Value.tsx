@@ -23,11 +23,22 @@ export default Value;
 
 const StyledInput = styled.input<Partial<IValueProps>>`
   width: 100%;
+  padding: 12px 20px;
   color: ${theme.white};
   text-align: ${(props) => props.textAlign};
+  border: 1px solid ${theme.border.lightGray};
+  border-radius: 5px;
 
   ::placeholder {
     color: ${theme.white};
+  }
+
+  :hover {
+    border: 1px solid ${theme.white};
+  }
+
+  :focus-within {
+    border: 1px solid ${theme.orange};
   }
 
   :focus {

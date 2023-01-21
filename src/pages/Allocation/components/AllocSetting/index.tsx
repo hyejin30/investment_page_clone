@@ -83,21 +83,19 @@ function AllocSetting() {
       </Dropdown>
       <Input>
         <Input.Label htmlFor="band">밴드 리밸런싱</Input.Label>
-        <Input.Contents>
-          <Input.Value
-            max={100}
-            min={0}
-            placeholder="밴드 리밸런싱 기준을 입력해주세요."
-            textAlign="center"
-            title="band"
-            type="number"
-            value={data.band}
-            onChange={handleInputChange}
-          />
-          <Input.Right>
-            <Percentage>%</Percentage>
-          </Input.Right>
-        </Input.Contents>
+        <Input.Value
+          max={100}
+          min={0}
+          placeholder="밴드 리밸런싱 기준을 입력해주세요."
+          textAlign="center"
+          title="band"
+          type="number"
+          value={data.band}
+          onChange={handleInputChange}
+        />
+        <Input.Right>
+          <Percentage>%</Percentage>
+        </Input.Right>
         <Input.SubMessage>0 ~ 100 까지 입력할 수 있습니다. (0 입력시 비활성화)</Input.SubMessage>
       </Input>
     </Container>
@@ -112,5 +110,8 @@ const Container = styled.div`
 `;
 
 const Percentage = styled.span`
+  position: absolute;
+  top: 45px;
+  right: 28px;
   color: ${theme.white};
 `;
