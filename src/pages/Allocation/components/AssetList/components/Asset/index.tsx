@@ -36,7 +36,7 @@ function Asset({
   onSelectInputClick,
 }: IAssetProps) {
   const [searchValue, setSearchValue] = useState('');
-  const { data: stockListData, isSuccess: getSuccess } = useGetStockList();
+  const { data: stockListData, isSuccess: getSuccess } = useGetStockList(searchValue);
 
   // const handleSearch = (data: IStock[], value: string) => data.filter((item) => item.label.includes(value));
 
