@@ -1,10 +1,10 @@
 import { Label } from 'components/atoms';
-import Layout from './components/Layout';
-import Input from './components/Input';
+import SelectLayout from './components/SelectLayout';
+import SelectInput from './components/SelectInput';
 
-const Select = Object.assign(Layout, {
+const Select = Object.assign(SelectLayout, {
   Label,
-  Input,
+  Input: SelectInput,
 });
 
 export default Select;

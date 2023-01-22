@@ -1,11 +1,11 @@
 import { ChangeEvent, MouseEvent, useState } from 'react';
 import styled from 'styled-components';
 
-import { Input, Text } from 'components/atoms';
+import { NumberInput, Text } from 'components/atoms';
 import { Dropdown, Select } from 'components/molecule';
 
 import { ALLOC_ALGORITHM_LIST, ALLOC_CYCLE_LIST } from './data';
-import { flex, theme } from 'styles';
+import { flex } from 'styles';
 
 function AllocSetting() {
   const [showAlgorithmDropdown, setShowAlgorithmDropdown] = useState(false);
@@ -14,12 +14,12 @@ function AllocSetting() {
   const [data, setData] = useState({
     algorithm: '전략배분 (정적자산배분)',
     cycle: '월별',
-    band: '',
+    band: 0,
   });
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { title, value } = e.target;
-    if (title === 'band') return setData((prev) => ({ ...prev, [title]: value }));
+    if (title === 'band') return setData((prev) => ({ ...prev, [title]: parseInt(value) }));
   };
 
   const handleSelectInputClick = (e: MouseEvent<HTMLDivElement>) => {
@@ -81,23 +81,15 @@ function AllocSetting() {
           ))}
         </Dropdown.List>
       </Dropdown>
-      <Input>
-        <Input.Label htmlFor="band">밴드 리밸런싱</Input.Label>
-        <Input.Value
-          max={100}
-          min={0}
-          placeholder="밴드 리밸런싱 기준을 입력해주세요."
-          textAlign="center"
-          title="band"
-          type="number"
-          value={data.band}
-          onChange={handleInputChange}
-        />
-        <Input.Right>
-          <Percentage>%</Percentage>
-        </Input.Right>
-        <Input.SubMessage>0 ~ 100 까지 입력할 수 있습니다. (0 입력시 비활성화)</Input.SubMessage>
-      </Input>
+      <NumberInput
+        label="밴드 리밸런싱"
+        max={100}
+        min={0}
+        subMessage="0 ~ 100까지 입력할 수 있습니다. (0 입력시 비활성화)"
+        title="band"
+        value={data.band}
+        onChange={handleInputChange}
+      />
     </Container>
   );
 }
@@ -107,11 +99,4 @@ export default AllocSetting;
 const Container = styled.div`
   ${flex('', '', 'column')};
   row-gap: 30px;
-`;
-
-const Percentage = styled.span`
-  position: absolute;
-  top: 45px;
-  right: 28px;
-  color: ${theme.white};
 `;
