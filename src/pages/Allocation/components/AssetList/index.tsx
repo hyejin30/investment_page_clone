@@ -1,13 +1,10 @@
 import { useState, MouseEvent, ChangeEvent } from 'react';
 import styled from 'styled-components';
 
-import { Button, Text, NumberInput } from 'components/atoms';
-import { Dropdown, Select } from 'components/molecule';
+import { Button, Text } from 'components/atoms';
+import Asset from './components/Asset';
 
-import fillZero from 'utils/fillZero';
-import { STOCK_LIST } from './data';
-
-import { flex, theme } from 'styles';
+import { flex } from 'styles';
 import { IAsset } from 'types/allocation';
 
 function AssetList() {
@@ -56,42 +53,19 @@ function AssetList() {
   return (
     <Container>
       <Text.Medium>자산군 추가</Text.Medium>
-      {assetList?.map((asset, idx) => (
-        <Asset key={`asset-dropdown-${idx}`}>
-          <Dropdown>
-            <Dropdown.List isOpen={showDropdown[`asset-${idx}`]}>
-              {STOCK_LIST.map((item, optionIdx) => (
-                <Dropdown.Option
-                  key={`asset-dropdown-option-${optionIdx}`}
-                  isActive={item.label === asset.name}
-                  title={`asset-${idx}`}
-                  onClick={handleDropdownOptionClick}
-                >
-                  {item.label}
-                </Dropdown.Option>
-              ))}
-            </Dropdown.List>
-            <Dropdown.Trigger>
-              <Select>
-                <Select.Label htmlFor={`asset-${idx}`}>{`자산 ${fillZero(idx)}`}</Select.Label>
-                <Select.Input title={`asset-${idx}`} value={asset.name} onClick={handleSelectInputClick} />
-              </Select>
-            </Dropdown.Trigger>
-          </Dropdown>
-          <NumberInput
-            label="비중"
-            max="100"
-            min="0"
-            subMessage="0 ~ 100까지 입력할 수 있습니다."
-            title={`asset-${idx}`}
-            value={asset.ratio}
-            onChange={handleRatioInputChange}
-          />
-          <BtnList>
-            {assetList.length - 1 === idx && <AddBtn onClick={addAsset}>추가하기</AddBtn>}
-            <DeleteBtn onClick={() => deleteAsset(idx)}>삭제하기</DeleteBtn>
-          </BtnList>
-        </Asset>
+      {assetList?.map((asset, index) => (
+        <Asset
+          asset={asset}
+          index={index}
+          isLastAsset={assetList.length - 1 === index}
+          isOpen={showDropdown[`asset-${index}`]}
+          title={`asset-${index}`}
+          onAdd={addAsset}
+          onDelete={() => deleteAsset(index)}
+          onDropdownOptionClick={handleDropdownOptionClick}
+          onRatioInputChange={handleRatioInputChange}
+          onSelectInputClick={handleSelectInputClick}
+        />
       ))}
       {assetList?.length === 0 && <AddBtn onClick={addAsset}>추가하기</AddBtn>}
     </Container>
@@ -105,24 +79,7 @@ const Container = styled.div`
   row-gap: 30px;
 `;
 
-const Asset = styled.div`
-  ${flex('', '', 'column')};
-  row-gap: 30px;
-`;
-
-const BaseBtn = styled(Button)`
+const AddBtn = styled(Button)`
   width: 105px;
   padding: 12px 0px;
-`;
-
-const BtnList = styled.div`
-  ${flex('', '')};
-  column-gap: 20px;
-`;
-
-const AddBtn = styled(BaseBtn)``;
-
-const DeleteBtn = styled(BaseBtn)`
-  background: #000000;
-  color: ${theme.white};
 `;
