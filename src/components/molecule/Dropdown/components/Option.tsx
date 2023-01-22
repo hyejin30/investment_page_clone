@@ -6,7 +6,7 @@ import { theme } from 'styles';
 
 interface IOptionProps extends HTMLAttributes<HTMLLIElement> {
   children: ReactNode;
-  isActive: boolean;
+  isActive?: boolean;
   title: string;
   onClick: (e: MouseEvent<HTMLLIElement>) => void;
 }
@@ -23,7 +23,7 @@ function Option(props: IOptionProps) {
 export default Option;
 
 interface IActive {
-  isActive: boolean;
+  isActive?: boolean;
 }
 
 const Container = styled.li<IActive>`

@@ -56,12 +56,7 @@ function Asset({
             onChange={(e) => setSearchValue(e.target.value)}
           />
           {stockList.map((stock, optionIdx) => (
-            <Dropdown.Option
-              key={`asset-dropdown-option-${optionIdx}`}
-              isActive={stock.label === asset.name}
-              title={title}
-              onClick={onDropdownOptionClick}
-            >
+            <Dropdown.Option key={`asset-dropdown-option-${optionIdx}`} title={title} onClick={onDropdownOptionClick}>
               {stock.label}
             </Dropdown.Option>
           ))}
