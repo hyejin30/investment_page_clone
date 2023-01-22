@@ -40,6 +40,14 @@ const StyledInput = styled(Input)`
   input {
     border: 1px solid ${theme.border.lightGray};
     border-radius: 5px;
+
+    :hover {
+      border: 1px solid ${theme.white};
+    }
+
+    :focus {
+      border: 1px solid ${theme.orange};
+    }
   }
 `;
 
