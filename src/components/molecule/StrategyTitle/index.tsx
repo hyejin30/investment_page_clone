@@ -1,7 +1,7 @@
 import { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
-import Input from 'components/atoms/Input';
+import Input from 'components/atoms/Input/Input';
 import Button from 'components/atoms/Button';
 
 import { flex, fontSize, theme } from 'styles';

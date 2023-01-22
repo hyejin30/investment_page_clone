@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { theme } from 'styles';
 
 const GlobalStyle = createGlobalStyle`
     html, body, div, span, applet, object, iframe,
@@ -65,6 +66,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         width: 100vw;
         height: 100vh;
+        background: ${theme.black};
         padding: 0;
         margin: 0;
         font-family: 'NanumSquare', sans-serif;

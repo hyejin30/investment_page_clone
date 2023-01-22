@@ -66,7 +66,7 @@ function AssetClassList() {
               {STOCK_LIST.map((item, optionIdx) => (
                 <Dropdown.Option
                   key={`option-asset-${optionIdx}`}
-                  isActive={false}
+                  isActive={item.label === assetClass.name}
                   title={`assetClass-${idx}`}
                   onClick={handleDropdownOptionClick}
                 >

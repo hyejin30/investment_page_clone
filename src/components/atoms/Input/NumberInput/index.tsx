@@ -1,7 +1,8 @@
-import styled from 'styled-components';
-import Input from '..';
-import { theme } from 'styles';
 import { ChangeEvent } from 'react';
+import styled from 'styled-components';
+
+import Input from 'components/atoms/Input/Input';
+import { theme } from 'styles';
 
 interface INumberInputProps {
   label?: string;
@@ -40,6 +41,14 @@ const StyledInput = styled(Input)`
   input {
     border: 1px solid ${theme.border.lightGray};
     border-radius: 5px;
+
+    :hover {
+      border: 1px solid ${theme.white};
+    }
+
+    :focus {
+      border: 1px solid ${theme.orange};
+    }
   }
 `;
 
