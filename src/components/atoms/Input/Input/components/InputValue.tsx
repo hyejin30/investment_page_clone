@@ -5,13 +5,13 @@ import { theme } from 'styles';
 interface IValueProps extends HTMLAttributes<HTMLInputElement> {
   title: HTMLInputElement['title'];
   maxLength?: number;
-  max?: number;
-  min?: number;
+  max?: string;
+  min?: string;
   placeholder?: string;
   readOnly?: boolean;
   type?: 'text' | 'number' | 'email' | 'password';
   textAlign?: 'center' | 'left' | 'right';
-  value: string | number;
+  value: string;
 }
 
 function Value(props: IValueProps) {

@@ -14,12 +14,12 @@ function AllocSetting() {
   const [data, setData] = useState({
     algorithm: '전략배분 (정적자산배분)',
     cycle: '월별',
-    band: 0,
+    band: '',
   });
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { title, value } = e.target;
-    if (title === 'band') return setData((prev) => ({ ...prev, [title]: parseInt(value) }));
+    if (title === 'band') return setData((prev) => ({ ...prev, [title]: value }));
   };
 
   const handleSelectInputClick = (e: MouseEvent<HTMLDivElement>) => {
@@ -83,8 +83,8 @@ function AllocSetting() {
       </Dropdown>
       <NumberInput
         label="밴드 리밸런싱"
-        max={100}
-        min={0}
+        max="100"
+        min="0"
         subMessage="0 ~ 100까지 입력할 수 있습니다. (0 입력시 비활성화)"
         title="band"
         value={data.band}
