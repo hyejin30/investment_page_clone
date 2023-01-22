@@ -7,8 +7,9 @@ interface IListProps extends HTMLAttributes<HTMLUListElement> {
   isOpen: boolean;
 }
 
-function List({ children, isOpen }: IListProps) {
-  return isOpen ? <Container>{children}</Container> : null;
+function List(props: IListProps) {
+  const { isOpen, children, ...restProps } = props;
+  return isOpen ? <Container {...restProps}>{children}</Container> : null;
 }
 
 export default List;

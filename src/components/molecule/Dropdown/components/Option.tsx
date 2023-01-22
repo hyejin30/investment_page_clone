@@ -11,9 +11,10 @@ interface IOptionProps extends HTMLAttributes<HTMLLIElement> {
   onClick: (e: MouseEvent<HTMLLIElement>) => void;
 }
 
-function Option({ children, isActive, title, onClick }: IOptionProps) {
+function Option(props: IOptionProps) {
+  const { children, ...restProps } = props;
   return (
-    <Container isActive={isActive} title={title} onClick={onClick}>
+    <Container {...restProps}>
       <Text.Regular>{children}</Text.Regular>
     </Container>
   );

@@ -1,14 +1,14 @@
-import { ChangeEvent, MouseEvent } from 'react';
+import { ChangeEvent, MouseEvent, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { NumberInput, Button } from 'components/atoms';
-import { Dropdown, Select } from 'components/molecule';
+import { Dropdown, Select, SearchBar } from 'components/molecule';
 
 import fillZero from 'utils/fillZero';
 import { STOCK_LIST } from './data';
 
 import { flex, theme } from 'styles';
-import { IAsset } from 'types/allocation';
+import { IAsset, IStock } from 'types/allocation';
 
 interface IAssetProps {
   asset: IAsset;
@@ -35,11 +35,27 @@ function Asset({
   onRatioInputChange,
   onSelectInputClick,
 }: IAssetProps) {
+  const [searchValue, setSearchValue] = useState('');
+  const [stockList, setStockList] = useState<IStock[]>(STOCK_LIST);
+
+  const search = (data: IStock[], value: string) => data.filter((item) => item.label.includes(value));
+
+  useEffect(() => {
+    if (!searchValue) return setStockList(STOCK_LIST);
+    setStockList(search(STOCK_LIST, searchValue));
+  }, [searchValue]);
+
   return (
     <Container>
-      <Dropdown>
+      <AssetDropdown>
         <Dropdown.List isOpen={isOpen}>
-          {STOCK_LIST.map((stock, optionIdx) => (
+          <SearchBar
+            placeholder="검색어를 입력하세요."
+            title={title}
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+          />
+          {stockList.map((stock, optionIdx) => (
             <Dropdown.Option
               key={`asset-dropdown-option-${optionIdx}`}
               isActive={stock.label === asset.name}
@@ -56,7 +72,7 @@ function Asset({
             <Select.Input title={title} value={asset.name} onClick={onSelectInputClick} />
           </Select>
         </Dropdown.Trigger>
-      </Dropdown>
+      </AssetDropdown>
       <NumberInput
         label="비중"
         max="100"
@@ -79,6 +95,18 @@ export default Asset;
 const Container = styled.div`
   ${flex('', '', 'column')};
   row-gap: 30px;
+`;
+
+const AssetDropdown = styled(Dropdown)`
+  li {
+    border: 1px solid ${theme.border.lightGray};
+    border-radius: 0;
+
+    :hover {
+      background: none;
+      border: 1px solid ${theme.white};
+    }
+  }
 `;
 
 const BtnList = styled.div`

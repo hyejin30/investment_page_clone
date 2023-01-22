@@ -1,4 +1,6 @@
-export const STOCK_LIST = [
+import { IStock } from 'types/allocation';
+
+export const STOCK_LIST: IStock[] = [
   { label: 'Agilent Technologies (A-US)', value: 'A-US', category: '미국 주식' },
   { label: '동화약품 (A000020)', value: 'A000020', category: '한국 주식' },
   { label: 'KR모터스 (A000040)', value: 'A000040', category: '한국 주식' },

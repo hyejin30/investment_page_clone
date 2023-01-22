@@ -28,6 +28,7 @@ const StyledInput = styled.input<Partial<IValueProps>>`
   text-align: ${(props) => props.textAlign};
 
   ::placeholder {
+    font-weight: 300;
     color: ${theme.white};
   }
 
