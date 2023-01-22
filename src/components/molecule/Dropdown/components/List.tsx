@@ -23,5 +23,14 @@ const Container = styled.ul`
   border: 1px solid ${theme.border.gray};
   border-radius: 5px;
   text-align: center;
+  overflow-y: auto;
   z-index: ${Z_INDEX.dropdown};
+
+  /* hide scroll */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  ::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
 `;

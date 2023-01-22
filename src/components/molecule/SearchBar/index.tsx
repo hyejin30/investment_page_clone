@@ -28,10 +28,12 @@ export default SearchBar;
 
 const Container = styled.div`
   ${flex('', 'center')}
-  position: relative;
+  position: sticky;
+  top: 0;
+  background: ${theme.black};
 
   input {
-    padding-left: 40px;
+    padding: 15px 40px;
     border: 1px solid ${theme.border.lightGray};
 
     :hover {
