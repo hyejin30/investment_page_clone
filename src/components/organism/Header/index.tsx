@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import TopMenu from './TopMenu';
 import Nav from './Nav';
 
-import { flex, theme } from 'styles';
+import { flex, theme, Z_INDEX } from 'styles';
 
 function Header() {
   return (
@@ -21,5 +21,5 @@ const Container = styled.header`
   position: sticky;
   top: 0px;
   background: ${theme.black};
-  z-index: 1;
+  z-index: ${Z_INDEX.header};
 `;

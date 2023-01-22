@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-const fitImg = css`
+export const fitImg = css`
   img {
     width: 100%;
     height: 100%;
@@ -8,4 +8,7 @@ const fitImg = css`
   }
 `;
 
-export default fitImg;
+export const Z_INDEX = {
+  header: 2,
+  dropdown: 1,
+};

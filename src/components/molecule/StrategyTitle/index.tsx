@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Input from 'components/atoms/Input/Input';
 import Button from 'components/atoms/Button';
 
-import { flex, fontSize, theme } from 'styles';
+import { flex, fontSize, theme, Z_INDEX } from 'styles';
 
 interface IStrategyTitleProps {
   title: string;
@@ -40,7 +40,7 @@ const Wrapper = styled.section`
   top: 131.5px;
   padding: 30px 0 20px;
   background: ${theme.black};
-  z-index: 1;
+  z-index: ${Z_INDEX.header};
 `;
 
 const InputValue = styled(Input.Value)`
