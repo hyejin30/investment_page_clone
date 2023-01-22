@@ -93,29 +93,29 @@ const Container = styled.div`
 `;
 
 const AssetDropdown = styled(Dropdown)`
-  // SearchBar
-  input {
-    border-radius: 5px 5px 0 0;
-  }
-
   // Dropdown.List
   ul {
     max-height: 420px;
-  }
 
-  // Dropdown.Option
-  li {
-    background: ${theme.black};
-    border: 1px solid ${theme.border.lightGray};
-    border-radius: 0;
-
-    :hover {
-      background: none;
-      border: 1px solid ${theme.white};
+    // SearchBar
+    input {
+      border-radius: 5px 5px 0 0;
     }
 
-    :last-child {
-      border-radius: 0 0 5px 5px;
+    // Dropdown.Option
+    li {
+      background: ${theme.black};
+      border: 1px solid ${theme.border.lightGray};
+      border-radius: 0;
+
+      :hover {
+        background: none;
+        border: 1px solid ${theme.white};
+      }
+
+      :last-child {
+        border-radius: 0 0 5px 5px;
+      }
     }
   }
 `;
