@@ -44,7 +44,8 @@ const Wrapper = styled.section`
 `;
 
 const InputValue = styled(Input.Value)`
-  border-bottom: 1px solid ${theme.white};
+  padding: 5px 0;
+  border-bottom: 2px solid ${theme.white};
   font-size: ${fontSize.large};
   font-weight: 700;
   color: ${theme.white};

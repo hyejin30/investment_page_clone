@@ -1,11 +1,11 @@
 import { useState, MouseEvent, ChangeEvent } from 'react';
 import styled from 'styled-components';
 
-import { Button, Input, Text } from 'components/atoms';
+import { Button, Text, NumberInput } from 'components/atoms';
 import { Dropdown, Select } from 'components/molecule';
 
 import { STOCK_LIST } from './data';
-import { flex, theme } from 'styles';
+import { flex } from 'styles';
 import { IAssetClass } from 'types/allocation';
 
 function AssetClassList() {
@@ -81,22 +81,15 @@ function AssetClassList() {
               </Select>
             </Dropdown.Trigger>
           </Dropdown>
-          <Input>
-            <Input.Label htmlFor={`assetClass-${idx}`}>비중</Input.Label>
-            <Input.Value
-              max={100}
-              min={0}
-              textAlign="center"
-              title={`assetClass-${idx}`}
-              type="number"
-              value={assetClass.ratio}
-              onChange={handleRatioInputChange}
-            />
-            <Input.Right>
-              <Percentage>%</Percentage>
-            </Input.Right>
-            <Input.SubMessage>0 ~ 100 까지 입력할 수 있습니다.</Input.SubMessage>
-          </Input>
+          <NumberInput
+            label="비중"
+            max={100}
+            min={0}
+            subMessage="0 ~ 100까지 입력할 수 있습니다."
+            title={`assetClass-${idx}`}
+            value={assetClass.ratio}
+            onChange={handleRatioInputChange}
+          />
         </AssetClass>
       ))}
       <ClassAddBtn onClick={handleClassAddBtnClick}>추가하기</ClassAddBtn>
@@ -114,13 +107,6 @@ const Container = styled.div`
 const ClassAddBtn = styled(Button)`
   width: 105px;
   padding: 12px 0px;
-`;
-
-const Percentage = styled.span`
-  position: absolute;
-  top: 45px;
-  right: 28px;
-  color: ${theme.white};
 `;
 
 const AssetClass = styled.div`

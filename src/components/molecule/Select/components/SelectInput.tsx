@@ -2,6 +2,7 @@ import { MouseEvent } from 'react';
 import styled from 'styled-components';
 
 import { Input } from 'components/atoms';
+import { theme } from 'styles';
 
 interface ISelectInputProps {
   title: string;
@@ -14,7 +15,7 @@ function SelectInput(props: ISelectInputProps) {
 
   return (
     <StyledInput title={restProps.title} onClick={onClick}>
-      <Input.Value readOnly {...restProps} />
+      <StyledInputValue readOnly {...restProps} />
       <Input.Right>
         <Arrow>
           <img alt="arrow down" src="/images/ic-arrow-down-orange.svg" />
@@ -28,9 +29,19 @@ export default SelectInput;
 
 const StyledInput = styled(Input)`
   cursor: pointer;
+`;
 
-  input {
-    cursor: pointer;
+const StyledInputValue = styled(Input.Value)`
+  border: 1px solid ${theme.border.lightGray};
+  border-radius: 5px;
+  cursor: pointer;
+
+  :hover {
+    border: 1px solid ${theme.white};
+  }
+
+  :focus {
+    border: 1px solid ${theme.orange};
   }
 `;
 
