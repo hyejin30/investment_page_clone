@@ -44,11 +44,15 @@ const Wrapper = styled.section`
 `;
 
 const InputValue = styled(Input.Value)`
-  padding: 2px 0;
+  padding: 0;
   border-bottom: 2px solid ${theme.white};
   font-size: ${fontSize.large};
   font-weight: 700;
   color: ${theme.white};
+
+  ::placeholder {
+    font-weight: 700;
+  }
 `;
 
 const SaveBtn = styled(Button)`
