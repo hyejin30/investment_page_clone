@@ -1,24 +1,38 @@
-import { ChangeEvent, HTMLAttributes } from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
+import { ChangeEvent, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { Input } from 'components/atoms';
 import { fitImg, flex, theme } from 'styles';
 
-interface ISearchBarProps extends HTMLAttributes<HTMLDivElement> {
+interface ISearchBarProps {
   placeholder: string;
   title: string;
-  value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (value: string) => void;
 }
 
-function SearchBar({ placeholder, title, value, onChange }: ISearchBarProps) {
+function SearchBar({ placeholder, title, onChange }: ISearchBarProps) {
+  const [searchValue, setSearchValue] = useState('');
+
+  // debounce 적용
+  useEffect(() => {
+    const timer = setTimeout(() => onChange(searchValue), 500);
+    return () => clearTimeout(timer);
+  }, [searchValue]);
+
   return (
     <Container>
       <SearchIcon>
         <img alt="search" src="/images/ic-search.svg" />
       </SearchIcon>
       <Input>
-        <Input.Value placeholder={placeholder} textAlign="left" title={title} value={value} onChange={onChange} />
+        <Input.Value
+          placeholder={placeholder}
+          textAlign="left"
+          title={title}
+          value={searchValue}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)}
+        />
       </Input>
     </Container>
   );

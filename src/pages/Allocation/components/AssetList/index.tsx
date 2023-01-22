@@ -55,6 +55,7 @@ function AssetList() {
       <Text.Medium>자산군 추가</Text.Medium>
       {assetList?.map((asset, index) => (
         <Asset
+          key={`asset-${index}`}
           asset={asset}
           index={index}
           isLastAsset={assetList.length - 1 === index}
