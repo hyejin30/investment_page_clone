@@ -37,7 +37,7 @@ const Wrapper = styled.section`
   ${flex('', '')}
   column-gap: 60px;
   position: sticky;
-  top: 133px;
+  top: 131.5px;
   padding: 30px 0 20px;
   background: ${theme.black};
   z-index: 1;
