@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, useEffect, useState } from 'react';
+import { useState, ChangeEvent, MouseEvent } from 'react';
 import styled from 'styled-components';
 
 import { NumberInput, Button } from 'components/atoms';
@@ -38,23 +38,15 @@ function Asset({
   const [searchValue, setSearchValue] = useState('');
   const { data: stockListData, isSuccess: getSuccess } = useGetStockList(searchValue);
 
-  // const handleSearch = (data: IStock[], value: string) => data.filter((item) => item.label.includes(value));
-
-  useEffect(() => {
-    // if (!searchValue) return setStockList([]);
-    // setStockList(handleSearch(stockListData, searchValue));
-  }, [searchValue]);
+  const handleSearchInputChange = (value: string) => {
+    setSearchValue(value);
+  };
 
   return (
     <Container>
       <AssetDropdown>
         <Dropdown.List isOpen={isOpen}>
-          <SearchBar
-            placeholder="검색어를 입력하세요."
-            title={title}
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-          />
+          <SearchBar placeholder="검색어를 입력하세요." title={title} onChange={handleSearchInputChange} />
           {(getSuccess ? stockListData : null)?.map((stock, optionIdx) => (
             <Dropdown.Option key={`asset-dropdown-option-${optionIdx}`} title={title} onClick={onDropdownOptionClick}>
               {stock.label}
