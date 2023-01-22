@@ -1,6 +1,6 @@
 import { HTMLAttributes, ReactNode } from 'react';
 import styled from 'styled-components';
-import { flex, theme } from 'styles';
+import { flex, theme, Z_INDEX } from 'styles';
 
 interface IListProps extends HTMLAttributes<HTMLUListElement> {
   children: ReactNode;
@@ -23,5 +23,5 @@ const Container = styled.ul`
   border: 1px solid ${theme.border.gray};
   border-radius: 5px;
   text-align: center;
-  z-index: 1;
+  z-index: ${Z_INDEX.dropdown};
 `;

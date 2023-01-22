@@ -1,14 +1,14 @@
 import Label from 'components/atoms/Label';
-import InputLayout from './components/InputLayout';
-import InputValue from './components/InputValue';
-import InputRight from './components/InputRight';
-import InputSubMessage from './components/InputSubMessage';
+import Layout from './components/Layout';
+import Value from './components/Value';
+import Right from './components/Right';
+import SubMessage from './components/SubMessage';
 
-const Input = Object.assign(InputLayout, {
+const Input = Object.assign(Layout, {
   Label,
-  Value: InputValue,
-  Right: InputRight,
-  SubMessage: InputSubMessage,
+  Value,
+  Right,
+  SubMessage,
 });
 
 export default Input;
