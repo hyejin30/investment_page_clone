@@ -32,6 +32,10 @@ const Container = styled.li<IActive>`
   color: ${theme.white};
   cursor: pointer;
   ${(props) => props.isActive && ActiveStyle}
+
+  :hover {
+    background: ${theme.background.lightGray};
+  }
 `;
 
 const ActiveStyle = css`
