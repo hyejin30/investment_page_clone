@@ -6,8 +6,9 @@ interface ILayoutProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
-function Layout({ children }: ILayoutProps) {
-  return <Container>{children}</Container>;
+function Layout(props: ILayoutProps) {
+  const { children, ...restProps } = props;
+  return <Container {...restProps}>{children}</Container>;
 }
 
 export default Layout;

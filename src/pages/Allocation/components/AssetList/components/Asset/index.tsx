@@ -47,7 +47,7 @@ function Asset({
 
   return (
     <Container>
-      <Dropdown>
+      <AssetDropdown>
         <Dropdown.List isOpen={isOpen}>
           <SearchBar
             placeholder="검색어를 입력하세요."
@@ -56,14 +56,14 @@ function Asset({
             onChange={(e) => setSearchValue(e.target.value)}
           />
           {stockList.map((stock, optionIdx) => (
-            <AssetDropdownOption
+            <Dropdown.Option
               key={`asset-dropdown-option-${optionIdx}`}
               isActive={stock.label === asset.name}
               title={title}
               onClick={onDropdownOptionClick}
             >
               {stock.label}
-            </AssetDropdownOption>
+            </Dropdown.Option>
           ))}
         </Dropdown.List>
         <Dropdown.Trigger>
@@ -72,7 +72,7 @@ function Asset({
             <Select.Input title={title} value={asset.name} onClick={onSelectInputClick} />
           </Select>
         </Dropdown.Trigger>
-      </Dropdown>
+      </AssetDropdown>
       <NumberInput
         label="비중"
         max="100"
@@ -97,13 +97,15 @@ const Container = styled.div`
   row-gap: 30px;
 `;
 
-const AssetDropdownOption = styled(Dropdown.Option)`
-  border: 1px solid ${theme.border.lightGray};
-  border-radius: 0;
+const AssetDropdown = styled(Dropdown)`
+  li {
+    border: 1px solid ${theme.border.lightGray};
+    border-radius: 0;
 
-  :hover {
-    background: none;
-    border: 1px solid ${theme.white};
+    :hover {
+      background: none;
+      border: 1px solid ${theme.white};
+    }
   }
 `;
 
