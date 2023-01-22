@@ -1,12 +1,13 @@
 import { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 
+import { Button, Text } from 'components/atoms';
 import { StrategyTitle } from 'components/molecule';
 import { Layout } from 'components/organism';
 import AllocSetting from './components/AllocSetting';
 import AssetList from './components/AssetList';
 
-import { flex } from 'styles';
+import { flex, theme } from 'styles';
 
 function Allocation() {
   const [strategyTitle, setStrategyTitle] = useState('');
@@ -14,6 +15,10 @@ function Allocation() {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { title, value } = e.target;
     if (title === 'strategyTitle') return setStrategyTitle(value);
+  };
+
+  const backTest = () => {
+    // code
   };
 
   return (
@@ -24,6 +29,11 @@ function Allocation() {
           <AllocSetting />
           <AssetList />
         </Wrapper>
+        <BackTestBtnWrap>
+          <BackTestBtn onClick={backTest}>
+            <Text.Medium color={theme.black}>백테스트</Text.Medium>
+          </BackTestBtn>
+        </BackTestBtnWrap>
       </Container>
     </Layout>
   );
@@ -41,4 +51,14 @@ const Wrapper = styled.div`
   ${flex('', '', 'column')};
   width: 640px;
   row-gap: 60px;
+`;
+
+const BackTestBtnWrap = styled.div`
+  text-align: center;
+`;
+
+const BackTestBtn = styled(Button)`
+  width: 190px;
+  padding: 16px 0;
+  background: linear-gradient(to right, rgb(236, 97, 38), rgb(236, 38, 38));
 `;
