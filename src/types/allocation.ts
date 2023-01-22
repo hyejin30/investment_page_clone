@@ -3,7 +3,7 @@ export interface IAllocation {
   cycle: string; // TODO: data -> union
 }
 
-export interface IAssetClass {
+export interface IAsset {
   name: string;
-  ratio: number;
+  ratio: string;
 }

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { StrategyTitle } from 'components/molecule';
 import { Layout } from 'components/organism';
 import AllocSetting from './components/AllocSetting';
-import AssetClassList from './components/AssetClassList';
+import AssetList from './components/AssetList';
 
 import { flex } from 'styles';
 
@@ -22,7 +22,7 @@ function Allocation() {
         <StrategyTitle title="strategyTitle" value={strategyTitle} onChange={handleInputChange} />
         <Wrapper>
           <AllocSetting />
-          <AssetClassList />
+          <AssetList />
         </Wrapper>
       </Container>
     </Layout>

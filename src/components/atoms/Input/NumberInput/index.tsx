@@ -6,10 +6,10 @@ import { theme } from 'styles';
 
 interface INumberInputProps {
   label?: string;
-  max?: number;
-  min?: number;
+  max?: string;
+  min?: string;
   subMessage?: string;
-  value: number;
+  value: string;
   title: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
