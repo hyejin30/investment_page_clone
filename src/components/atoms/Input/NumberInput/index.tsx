@@ -1,7 +1,8 @@
-import styled from 'styled-components';
-import Input from '..';
-import { theme } from 'styles';
 import { ChangeEvent } from 'react';
+import styled from 'styled-components';
+
+import Input from 'components/atoms/Input/Input';
+import { theme } from 'styles';
 
 interface INumberInputProps {
   label?: string;
