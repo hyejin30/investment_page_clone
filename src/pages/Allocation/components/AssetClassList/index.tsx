@@ -7,6 +7,7 @@ import { Dropdown, Select } from 'components/molecule';
 import { STOCK_LIST } from './data';
 import { flex } from 'styles';
 import { IAssetClass } from 'types/allocation';
+import fillZero from 'utils/fillZero';
 
 function AssetClassList() {
   const [assetClassList, setAssetClassList] = useState<IAssetClass[]>([]);
@@ -76,7 +77,7 @@ function AssetClassList() {
             </Dropdown.List>
             <Dropdown.Trigger>
               <Select>
-                <Select.Label htmlFor={`assetClass-${idx}`}>{`자산 ${idx + 1}`}</Select.Label>
+                <Select.Label htmlFor={`assetClass-${idx}`}>{`자산 ${fillZero(idx)}`}</Select.Label>
                 <Select.Input title={`assetClass-${idx}`} value={assetClass.name} onClick={handleSelectInputClick} />
               </Select>
             </Dropdown.Trigger>
