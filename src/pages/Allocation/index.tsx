@@ -1,13 +1,13 @@
 import { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 
+import { Button, Text } from 'components/atoms';
 import { StrategyTitle } from 'components/molecule';
 import { Layout } from 'components/organism';
 import AllocSetting from './components/AllocSetting';
 import AssetList from './components/AssetList';
 
 import { flex, theme } from 'styles';
-import { Button, Text } from 'components/atoms';
 
 function Allocation() {
   const [strategyTitle, setStrategyTitle] = useState('');
@@ -17,7 +17,9 @@ function Allocation() {
     if (title === 'strategyTitle') return setStrategyTitle(value);
   };
 
-  const backTest = () => {};
+  const backTest = () => {
+    // code
+  };
 
   return (
     <Layout>
