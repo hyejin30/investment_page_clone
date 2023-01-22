@@ -56,14 +56,14 @@ function Asset({
             onChange={(e) => setSearchValue(e.target.value)}
           />
           {stockList.map((stock, optionIdx) => (
-            <Dropdown.Option
+            <AssetDropdownOption
               key={`asset-dropdown-option-${optionIdx}`}
               isActive={stock.label === asset.name}
               title={title}
               onClick={onDropdownOptionClick}
             >
               {stock.label}
-            </Dropdown.Option>
+            </AssetDropdownOption>
           ))}
         </Dropdown.List>
         <Dropdown.Trigger>
@@ -95,6 +95,16 @@ export default Asset;
 const Container = styled.div`
   ${flex('', '', 'column')};
   row-gap: 30px;
+`;
+
+const AssetDropdownOption = styled(Dropdown.Option)`
+  border: 1px solid ${theme.border.lightGray};
+  border-radius: 0;
+
+  :hover {
+    background: none;
+    border: 1px solid ${theme.white};
+  }
 `;
 
 const BtnList = styled.div`
