@@ -30,7 +30,7 @@ const StyledButton = styled.button<IButtonStyle>`
   white-space: nowrap;
 
   :disabled {
-    background: ${theme.background.lightGray};
+    background: ${theme.gray};
     color: ${theme.black};
   }
 `;

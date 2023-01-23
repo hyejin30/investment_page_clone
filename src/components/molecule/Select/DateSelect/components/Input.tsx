@@ -16,10 +16,10 @@ function DateSelectInput(props: IDateSelectInputProps) {
   const { onClick, ...restProps } = props;
 
   return (
-    <Input title={restProps.title}>
+    <Input>
       <StyledInputValue readOnly pattern={date} {...restProps} />
       <Input.Right>
-        <CalendarIcon onClick={onClick}>
+        <CalendarIcon title={restProps.title} onClick={onClick}>
           <img alt="calendar" src="/images/ic-calendar-orange.svg" />
         </CalendarIcon>
       </Input.Right>
