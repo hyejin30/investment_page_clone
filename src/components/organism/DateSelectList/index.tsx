@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 
 import { Calendar, DateSelect } from 'components/molecule';
 import { flex } from 'styles';
+import { DateType } from 'types/date';
 
 function DateSelectList() {
   const now = dayjs();
@@ -13,12 +14,12 @@ function DateSelectList() {
   const [startDate, setStartDate] = useState(now.subtract(20, 'year').format('YYYY.MM.DD'));
   const [endDate, setEndDate] = useState(now.format('YYYY.MM.DD'));
 
-  const toggleCalendar = (title: string) => {
+  const toggleCalendar = (title: DateType) => {
     if (title === 'startDate') return setShowStartDateCalendar((prev) => !prev);
     if (title === 'endDate') return setShowEndDateCalendar((prev) => !prev);
   };
 
-  const handleDateSelect = (title: 'startDate' | 'endDate', date: string) => {
+  const handleDateSelect = (title: DateType, date: string) => {
     if (title === 'startDate') setStartDate(date);
     if (title === 'endDate') setEndDate(date);
     toggleCalendar(title);

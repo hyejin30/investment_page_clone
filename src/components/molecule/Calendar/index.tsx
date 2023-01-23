@@ -6,12 +6,13 @@ import { ko } from 'date-fns/locale';
 import dayjs from 'dayjs';
 
 import { fontSize, theme } from 'styles';
+import { DateType } from 'types/date';
 import 'react-day-picker/dist/style.css';
 
 interface ICalendarProps {
   defaultDate: string;
-  title: 'startDate' | 'endDate';
-  onSelect: (title: 'startDate' | 'endDate', date: string) => void;
+  title: DateType;
+  onSelect: (title: DateType, date: string) => void;
 }
 
 export default function Calendar({ defaultDate, title, onSelect }: ICalendarProps) {
