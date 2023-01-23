@@ -1,28 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
-/*
-export const ALLOC_ALGORITHM = {
-  static_alloc: '전략배분 (정적자산배분)',
-  dual_momentum: '듀얼모멘텀',
-  vaa: 'VAA',
-  daa: 'DAA',
-};
-
-export const ALLOC_REBALANCING = {
-  monthly: '월별',
-  quater: '분기별',
-  halfly: '반기별',
-  yearly: '매년',
-  none: '하지 않음 (Buy-and-Hold)',
-};
-
-export const ALLOC_LEVEL = {
-  easy: '초급',
-  intermediate: '중급',
-  advanced: '고급',
-};
-*/
-
 export const ALLOC_ALGORITHM = {
   '전략배분 (정적자산배분)': 'static_alloc',
   듀얼모멘텀: 'dual_momentum',
