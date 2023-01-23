@@ -20,7 +20,7 @@ const Container = styled.ul`
   top: 80px;
   width: 100%;
   background: ${theme.background.darkGray};
-  border: 1px solid ${theme.border.gray};
+  border: 1px solid ${theme.gray};
   border-radius: 5px;
   text-align: center;
   overflow-y: auto;

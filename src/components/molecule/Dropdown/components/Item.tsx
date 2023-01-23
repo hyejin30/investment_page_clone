@@ -35,7 +35,7 @@ const Container = styled.li<IActive>`
   ${(props) => props.isActive && ActiveStyle}
 
   :hover {
-    background: ${theme.background.lightGray};
+    background: ${theme.gray};
   }
 `;
 

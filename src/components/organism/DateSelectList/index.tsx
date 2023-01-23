@@ -10,7 +10,6 @@ function DateSelectList() {
 
   const [startDate, setStartDate] = useState(now);
   const [endDate, setEndDate] = useState(now);
-
   const [showStartDateCalendar, setShowStartDateCalendar] = useState(false);
   const [showEndDateCalendar, setShowEndDateCalendar] = useState(false);
 
@@ -30,12 +29,20 @@ function DateSelectList() {
       <DateSelect>
         <DateSelect.Label htmlFor="startDate">시작일 설정</DateSelect.Label>
         <DateSelect.Input title="startDate" value={startDate} onClick={toggleCalendar} />
-        {showStartDateCalendar && <Calendar onSelect={handleDateSelect} />}
+        {showStartDateCalendar && (
+          <CalendarWrap>
+            <Calendar onSelect={handleDateSelect} />
+          </CalendarWrap>
+        )}
       </DateSelect>
       <DateSelect>
         <DateSelect.Label htmlFor="endDate">종료일 설정</DateSelect.Label>
         <DateSelect.Input title="endDate" value={endDate} onClick={toggleCalendar} />
-        {showEndDateCalendar && <Calendar onSelect={handleDateSelect} />}
+        {showEndDateCalendar && (
+          <CalendarWrap>
+            <Calendar onSelect={handleDateSelect} />
+          </CalendarWrap>
+        )}
       </DateSelect>
     </Container>
   );
@@ -46,4 +53,8 @@ export default DateSelectList;
 const Container = styled.div`
   ${flex('', '')};
   column-gap: 15px;
+`;
+
+const CalendarWrap = styled.div`
+  position: relative;
 `;
