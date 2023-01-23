@@ -9,18 +9,19 @@ import { flex } from 'styles';
 import { DateType } from 'types/date';
 
 interface IMultiDateSelectProps {
+  data: { startDate: string; endDate: string };
   onSelect: (startDate: string, endDate: string) => void;
 }
 
-function MultiDateSelect({ onSelect }: IMultiDateSelectProps) {
+function MultiDateSelect({ data, onSelect }: IMultiDateSelectProps) {
   const now = dayjs();
   const initialStartDate = now.subtract(20, 'year').format('YYYY.MM.DD');
   const initialEndDate = now.format('YYYY.MM.DD');
 
   const [showStartDateCalendar, setShowStartDateCalendar] = useState(false);
   const [showEndDateCalendar, setShowEndDateCalendar] = useState(false);
-  const [startDate, setStartDate] = useState(initialStartDate);
-  const [endDate, setEndDate] = useState(initialEndDate);
+  const [startDate, setStartDate] = useState(data.startDate);
+  const [endDate, setEndDate] = useState(data.endDate);
 
   const toggleCalendar = (title: DateType) => {
     if (title === 'startDate') return setShowStartDateCalendar((prev) => !prev);
@@ -62,7 +63,7 @@ function MultiDateSelect({ onSelect }: IMultiDateSelectProps) {
         <DateSelect.Label htmlFor="startDate">시작일 설정</DateSelect.Label>
         <DateSelect.Input
           title="startDate"
-          value={startDate}
+          value={data.startDate}
           onBlur={handleInputBlur}
           onChange={handleInputChange}
           onClick={() => toggleCalendar('startDate')}
@@ -77,7 +78,7 @@ function MultiDateSelect({ onSelect }: IMultiDateSelectProps) {
         <DateSelect.Label htmlFor="endDate">종료일 설정</DateSelect.Label>
         <DateSelect.Input
           title="endDate"
-          value={endDate}
+          value={data.endDate}
           onBlur={handleInputBlur}
           onChange={handleInputChange}
           onClick={() => toggleCalendar('endDate')}
