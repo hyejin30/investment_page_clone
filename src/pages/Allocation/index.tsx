@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
-import { Layout, StrategyTitle } from 'components/organism';
-import AllocSetting from './components/AllocSetting';
-import AssetList from './components/AssetList';
-import AllocDateSelect from './components/AllocDateSelect';
-import BackTest from './components/BackTest';
+import { Layout } from 'components/organism';
+import { AllocDateSelect, AllocSetting, AllocStrategyName, AssetList, BackTest } from './components';
 
 import { flex } from 'styles';
 
@@ -12,7 +9,7 @@ function Allocation() {
   return (
     <Layout>
       <Container>
-        <StrategyTitle />
+        <AllocStrategyName />
         <Wrapper>
           <AllocSetting />
           <AssetList />

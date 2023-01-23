@@ -21,8 +21,8 @@ function BackTest() {
       ...rest,
     };
 
-    // POST API 대신 console.log로 최종 값 확인
-    console.log('strategy', formatted);
+    // 백테스트 API 대신 console.log로 최종 값 확인
+    console.log('백테스트', formatted);
   };
 
   return (

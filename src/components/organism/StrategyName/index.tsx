@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import Input from 'components/atoms/Input/Input';
@@ -6,7 +6,12 @@ import Button from 'components/atoms/Button';
 
 import { flex, fontSize, theme, Z_INDEX } from 'styles';
 
-function StrategyTitle() {
+interface IStrategyNameProps {
+  onChange: (value: string) => void;
+  onSave: () => void;
+}
+
+function StrategyName({ onChange, onSave }: IStrategyNameProps) {
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -14,25 +19,29 @@ function StrategyTitle() {
     setInputValue(value);
   };
 
+  useEffect(() => {
+    onChange(inputValue);
+  }, [inputValue]);
+
   return (
     <Wrapper>
       <Input>
         <InputValue
           placeholder="전략 이름을 입력해주세요."
           textAlign="left"
-          title="strategyTitle"
+          title="strategyName"
           value={inputValue}
           onChange={handleInputChange}
         />
       </Input>
-      <SaveBtn disabled={!inputValue} type="button" onClick={() => {}}>
+      <SaveBtn disabled={!inputValue} type="button" onClick={onSave}>
         전략 저장
       </SaveBtn>
     </Wrapper>
   );
 }
 
-export default StrategyTitle;
+export default StrategyName;
 
 const Wrapper = styled.section`
   ${flex('', '')}
