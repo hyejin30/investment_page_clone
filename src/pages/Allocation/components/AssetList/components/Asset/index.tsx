@@ -42,14 +42,12 @@ function Asset({
     setSearchValue(value);
   };
 
-  if (!getSuccess) return null;
-
   return (
     <Container>
       <AssetDropdown>
         <Dropdown.List isOpen={isOpen}>
           <SearchBar placeholder="검색어를 입력하세요." title={title} onChange={handleSearchInputChange} />
-          <StockList rows={stockListData} title={title} onItemClick={onDropdownItemClick} />
+          {getSuccess ? <StockList rows={stockListData} title={title} onItemClick={onDropdownItemClick} /> : null}
         </Dropdown.List>
         <Dropdown.Trigger>
           <Select>
