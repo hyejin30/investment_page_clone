@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { DayPicker } from 'react-day-picker';

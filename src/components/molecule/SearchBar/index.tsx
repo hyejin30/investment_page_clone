@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { ChangeEvent, useEffect, useState } from 'react';
 import styled from 'styled-components';
 

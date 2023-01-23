@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { IStock } from 'types/allocation';

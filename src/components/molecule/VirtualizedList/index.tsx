@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { FC, MouseEvent, useCallback } from 'react';
 import { List as _List, ListProps } from 'react-virtualized';
 

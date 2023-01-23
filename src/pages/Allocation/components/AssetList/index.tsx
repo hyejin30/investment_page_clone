@@ -38,9 +38,7 @@ function AssetList() {
   };
 
   const updateAsset = (key: 'name' | 'ratio', title: string, value: string) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/naming-convention
-    const [_, idx] = title.split('-');
-    const index = parseInt(idx);
+    const index = parseInt(title.split('-')[1]);
 
     if (index === 0) return setAssetList((prev) => [{ ...prev[index], [key]: value }, ...prev.slice(index + 1)]);
     setAssetList((prev) => [...prev.slice(0, index), { ...prev[index], [key]: value }, ...prev.slice(index + 1)]);

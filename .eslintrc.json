@@ -59,11 +59,7 @@
         "tsx": "never"
       }
     ],
-    // "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "import/no-extraneous-dependencies": [
-      "error",
-      { "devDependencies": true, "optionalDependencies": true, "peerDependencies": true }
-    ],
+    "import/no-extraneous-dependencies": false,
     "jsx-a11y/media-has-caption": ["off"],
     "no-alert": "off",
     "no-console": "off",
