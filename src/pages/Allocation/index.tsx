@@ -1,22 +1,14 @@
-import { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 
 import { Button, Text } from 'components/atoms';
 import { StrategyTitle } from 'components/molecule';
-import { Layout } from 'components/organism';
+import { Layout, DateSelectList } from 'components/organism';
 import AllocSetting from './components/AllocSetting';
 import AssetList from './components/AssetList';
 
 import { flex, theme } from 'styles';
 
 function Allocation() {
-  const [strategyTitle, setStrategyTitle] = useState('');
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { title, value } = e.target;
-    if (title === 'strategyTitle') return setStrategyTitle(value);
-  };
-
   const backTest = () => {
     // code
   };
@@ -24,10 +16,11 @@ function Allocation() {
   return (
     <Layout>
       <Container>
-        <StrategyTitle title="strategyTitle" value={strategyTitle} onChange={handleInputChange} />
+        <StrategyTitle />
         <Wrapper>
           <AllocSetting />
           <AssetList />
+          <DateSelectList />
         </Wrapper>
         <BackTestBtnWrap>
           <BackTestBtn onClick={backTest}>

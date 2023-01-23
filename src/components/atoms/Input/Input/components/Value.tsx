@@ -7,6 +7,7 @@ interface IValueProps extends HTMLAttributes<HTMLInputElement> {
   maxLength?: number;
   max?: string;
   min?: string;
+  pattern?: string;
   placeholder?: string;
   readOnly?: boolean;
   type?: 'text' | 'number' | 'email' | 'password';

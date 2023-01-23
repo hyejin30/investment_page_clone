@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 
 import Input from 'components/atoms/Input/Input';
@@ -6,25 +6,26 @@ import Button from 'components/atoms/Button';
 
 import { flex, fontSize, theme, Z_INDEX } from 'styles';
 
-interface IStrategyTitleProps {
-  title: string;
-  value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-}
+function StrategyTitle() {
+  const [inputValue, setInputValue] = useState('');
 
-function StrategyTitle({ title, value, onChange }: IStrategyTitleProps) {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setInputValue(value);
+  };
+
   return (
     <Wrapper>
       <Input>
         <InputValue
           placeholder="전략 이름을 입력해주세요."
           textAlign="left"
-          title={title}
-          value={value}
-          onChange={onChange}
+          title="strategyTitle"
+          value={inputValue}
+          onChange={handleInputChange}
         />
       </Input>
-      <SaveBtn disabled={!value} type="button" onClick={() => {}}>
+      <SaveBtn disabled={!inputValue} type="button" onClick={() => {}}>
         전략 저장
       </SaveBtn>
     </Wrapper>
