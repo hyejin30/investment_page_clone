@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 import { Button, Text } from 'components/atoms';
-import { StrategyTitle } from 'components/molecule';
-import { Layout, DateSelectList } from 'components/organism';
+import { Layout, DateSelectList, StrategyTitle } from 'components/organism';
 import AllocSetting from './components/AllocSetting';
 import AssetList from './components/AssetList';
 
