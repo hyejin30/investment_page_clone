@@ -1,6 +1,14 @@
+import { ALLOC_ALGORITHM, ALLOC_LEVEL, ALLOC_REBALANCING } from 'pages/Allocation/constant';
+
 export interface IAllocation {
-  algorithm: string; // TODO: data -> union
-  cycle: string; // TODO: data -> union
+  algo: keyof typeof ALLOC_ALGORITHM.en;
+  allocRebalancing: keyof typeof ALLOC_REBALANCING.en;
+  assetList: IAsset[];
+  band: string;
+  endDate: string;
+  level: keyof typeof ALLOC_LEVEL.en;
+  startDate: string;
+  strategyName: string;
 }
 
 export interface IAsset {
