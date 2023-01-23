@@ -3,7 +3,6 @@ import { FC, MouseEvent, useCallback } from 'react';
 import { List as _List, ListProps } from 'react-virtualized';
 
 import ListItem from './ListItem';
-
 import { IStock } from 'types/allocation';
 
 const List = _List as unknown as FC<ListProps>;
