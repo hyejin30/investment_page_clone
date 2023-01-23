@@ -22,7 +22,7 @@ export default AllocSideBar;
 
 const Container = styled(SideBar)`
   position: sticky;
-  top: 250px;
+  top: 220px;
   height: 100%;
 `;
 
