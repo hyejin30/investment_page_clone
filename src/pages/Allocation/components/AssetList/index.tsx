@@ -21,7 +21,7 @@ function AssetList() {
     setAssetList((prev) => prev.filter((_, idx) => idx !== deleteIdx));
   };
 
-  const handleDropdownOptionClick = (e: MouseEvent<HTMLLIElement>) => {
+  const handleDropdownItemClick = (e: MouseEvent<HTMLLIElement>) => {
     const { title, innerText } = e.currentTarget;
     updateAsset('name', title, innerText);
     toggleDropdown(title);
@@ -63,7 +63,7 @@ function AssetList() {
           title={`asset-${index}`}
           onAdd={addAsset}
           onDelete={() => deleteAsset(index)}
-          onDropdownOptionClick={handleDropdownOptionClick}
+          onDropdownItemClick={handleDropdownItemClick}
           onRatioInputChange={handleRatioInputChange}
           onSelectInputClick={handleSelectInputClick}
         />
