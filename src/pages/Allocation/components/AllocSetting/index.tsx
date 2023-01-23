@@ -50,14 +50,14 @@ function AllocSetting() {
         </Dropdown.Trigger>
         <Dropdown.List isOpen={showAlgorithmDropdown}>
           {ALLOC_ALGORITHM_LIST.map((item, idx) => (
-            <Dropdown.Option
+            <Dropdown.Item
               key={`option-algorithm-${idx}`}
               isActive={data.algorithm === item}
               title="algorithm"
               onClick={handleDropdownOptionClick}
             >
               {item}
-            </Dropdown.Option>
+            </Dropdown.Item>
           ))}
         </Dropdown.List>
       </Dropdown>
@@ -70,14 +70,14 @@ function AllocSetting() {
         </Dropdown.Trigger>
         <Dropdown.List isOpen={showCycleDropdown}>
           {ALLOC_CYCLE_LIST.map((item, idx) => (
-            <Dropdown.Option
+            <Dropdown.Item
               key={`option-cycle-${idx}`}
               isActive={data.cycle === item}
               title="cycle"
               onClick={handleDropdownOptionClick}
             >
               {item}
-            </Dropdown.Option>
+            </Dropdown.Item>
           ))}
         </Dropdown.List>
       </Dropdown>

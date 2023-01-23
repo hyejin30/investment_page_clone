@@ -4,14 +4,14 @@ import styled, { css } from 'styled-components';
 import { Text } from 'components/atoms';
 import { theme } from 'styles';
 
-interface IOptionProps extends HTMLAttributes<HTMLLIElement> {
+interface IItemProps extends HTMLAttributes<HTMLLIElement> {
   children: ReactNode;
   isActive?: boolean;
   title: string;
   onClick: (e: MouseEvent<HTMLLIElement>) => void;
 }
 
-function Option(props: IOptionProps) {
+function Item(props: IItemProps) {
   const { children, ...restProps } = props;
   return (
     <Container {...restProps}>
@@ -20,7 +20,7 @@ function Option(props: IOptionProps) {
   );
 }
 
-export default Option;
+export default Item;
 
 interface IActive {
   isActive?: boolean;

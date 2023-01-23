@@ -2,7 +2,7 @@ import { useState, ChangeEvent, MouseEvent } from 'react';
 import styled from 'styled-components';
 
 import { NumberInput, Button } from 'components/atoms';
-import { Dropdown, Select, SearchBar } from 'components/molecule';
+import { Dropdown, Select, SearchBar, VirtualizedList as StockList } from 'components/molecule';
 
 import useGetStockList from 'pages/Allocation/components/AssetList/queries/useGetStockList';
 
@@ -18,7 +18,7 @@ interface IAssetProps {
   title: string;
   onAdd: () => void;
   onDelete: () => void;
-  onDropdownOptionClick: (e: MouseEvent<HTMLLIElement>) => void;
+  onDropdownItemClick: (e: MouseEvent<HTMLLIElement>) => void;
   onRatioInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onSelectInputClick: (e: MouseEvent<HTMLDivElement>) => void;
 }
@@ -31,7 +31,7 @@ function Asset({
   title,
   onAdd,
   onDelete,
-  onDropdownOptionClick,
+  onDropdownItemClick,
   onRatioInputChange,
   onSelectInputClick,
 }: IAssetProps) {
@@ -42,16 +42,14 @@ function Asset({
     setSearchValue(value);
   };
 
+  if (!getSuccess) return null;
+
   return (
     <Container>
       <AssetDropdown>
         <Dropdown.List isOpen={isOpen}>
           <SearchBar placeholder="검색어를 입력하세요." title={title} onChange={handleSearchInputChange} />
-          {(getSuccess ? stockListData : null)?.map((stock, optionIdx) => (
-            <Dropdown.Option key={`asset-dropdown-option-${optionIdx}`} title={title} onClick={onDropdownOptionClick}>
-              {stock.label}
-            </Dropdown.Option>
-          ))}
+          <StockList rows={stockListData} title={title} onItemClick={onDropdownItemClick} />
         </Dropdown.List>
         <Dropdown.Trigger>
           <Select>
@@ -88,16 +86,19 @@ const AssetDropdown = styled(Dropdown)`
   // Dropdown.List
   ul {
     max-height: 420px;
+    border: 1px solid ${theme.border.lightGray};
 
     // SearchBar
     input {
+      border: 0;
+      border-bottom: 1px solid ${theme.border.lightGray};
       border-radius: 5px 5px 0 0;
     }
 
     // Dropdown.Option
     li {
       background: ${theme.black};
-      border: 1px solid ${theme.border.lightGray};
+      border-bottom: 1px solid ${theme.border.lightGray};
       border-radius: 0;
 
       :hover {
