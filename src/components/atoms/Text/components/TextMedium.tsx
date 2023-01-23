@@ -8,9 +8,11 @@ interface ITextMedium {
   color?: string;
 }
 
-function TextMedium({ children, weight = 300, color = theme.white }: ITextMedium) {
+function TextMedium(props: ITextMedium) {
+  const { children, weight = 400, color = theme.white, ...restProps } = props;
+
   return (
-    <Text color={color} weight={weight}>
+    <Text color={color} weight={weight} {...restProps}>
       {children}
     </Text>
   );

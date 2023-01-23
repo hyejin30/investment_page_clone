@@ -24,7 +24,7 @@ export default Button;
 type IButtonStyle = Omit<IButtonProps, 'children'>;
 
 const StyledButton = styled.button<IButtonStyle>`
-  border-radius: 5px;
+  border-radius: 8px;
   background: ${theme.orange};
   color: ${theme.black};
   white-space: nowrap;
