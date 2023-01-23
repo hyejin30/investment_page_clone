@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 import { Button, Text } from 'components/atoms';
-import { Layout, DateSelectList, StrategyTitle } from 'components/organism';
+import { Layout, StrategyTitle } from 'components/organism';
 import AllocSetting from './components/AllocSetting';
 import AssetList from './components/AssetList';
+import AllocDateSelect from './components/AllocDateSelect';
 
 import { flex, theme } from 'styles';
 
@@ -19,7 +20,7 @@ function Allocation() {
         <Wrapper>
           <AllocSetting />
           <AssetList />
-          <DateSelectList />
+          <AllocDateSelect />
         </Wrapper>
         <BackTestBtnWrap>
           <BackTestBtn onClick={backTest}>

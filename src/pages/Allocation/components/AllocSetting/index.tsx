@@ -6,7 +6,7 @@ import { NumberInput, Text } from 'components/atoms';
 import { Dropdown, Select } from 'components/molecule';
 
 import { strategyState } from 'recoil/allocation';
-import { ALLOC_ALGORITHM, ALLOC_REBALANCING } from 'pages/Allocation/constant';
+import { ALLOC_ALGORITHM_LIST, ALLOC_REBALANCING_LIST } from 'pages/Allocation/constant';
 
 import { flex } from 'styles';
 
@@ -49,7 +49,7 @@ function AllocSetting() {
           </Select>
         </Dropdown.Trigger>
         <Dropdown.List isOpen={showAlgoDropdown}>
-          {Object.keys(ALLOC_ALGORITHM).map((item, idx) => (
+          {ALLOC_ALGORITHM_LIST.map((item, idx) => (
             <Dropdown.Item
               key={`option-algo-${idx}`}
               isActive={algo === item}
@@ -69,7 +69,7 @@ function AllocSetting() {
           </Select>
         </Dropdown.Trigger>
         <Dropdown.List isOpen={showAllocRebalancingDropdown}>
-          {Object.keys(ALLOC_REBALANCING).map((item, idx) => (
+          {ALLOC_REBALANCING_LIST.map((item, idx) => (
             <Dropdown.Item
               key={`option-allocRebalancing-${idx}`}
               isActive={allocRebalancing === item}

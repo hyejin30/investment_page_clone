@@ -43,3 +43,7 @@ export const ALLOC_LEVEL = {
   중급: 'intermediate',
   고급: 'advanced',
 };
+
+export const ALLOC_ALGORITHM_LIST = Object.keys(ALLOC_ALGORITHM);
+export const ALLOC_REBALANCING_LIST = Object.keys(ALLOC_REBALANCING);
+export const ALLOC_LEVEL_LIST = Object.keys(ALLOC_LEVEL);
