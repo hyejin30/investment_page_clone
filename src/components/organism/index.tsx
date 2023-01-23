@@ -4,3 +4,4 @@ export { default as Layout } from './Layout/Layout';
 export { default as WrapperLayout } from './Layout/WrapperLayout';
 export { default as MultiDateSelect } from './MultiDateSelect';
 export { default as StrategyName } from './StrategyName';
+export { default as SideBar } from './SideBar';

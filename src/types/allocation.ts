@@ -7,7 +7,6 @@ type IAllocLevelList = keyof typeof ALLOC_LEVEL;
 export interface IStrategy {
   algo: IAllocAlgoList;
   allocRebalancing: IAllocRebalancingList;
-  assetList: IAsset[];
   band: string;
   endDate: string;
   level: IAllocLevelList;

@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import Input from 'components/atoms/Input/Input';
-import Button from 'components/atoms/Button';
+import Button from 'components/atoms/Button/Button';
 
 import { flex, fontSize, theme, Z_INDEX } from 'styles';
 
