@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import { Input } from 'components/atoms';
 
-// import { dateRegex } from 'utils/regex';
 import { theme } from 'styles';
 
 interface IDateSelectInputProps {

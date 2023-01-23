@@ -6,7 +6,7 @@ import { Dropdown, Select, SearchBar, VirtualizedList as StockList } from 'compo
 
 import useGetStockList from 'pages/Allocation/components/AssetList/queries/useGetStockList';
 
-import fillZero from 'utils/fillZero';
+import { fillZero } from 'utils';
 import { flex, theme } from 'styles';
 import { IAsset } from 'types/allocation';
 

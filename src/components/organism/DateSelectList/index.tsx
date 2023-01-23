@@ -4,8 +4,7 @@ import dayjs from 'dayjs';
 
 import { Calendar, DateSelect } from 'components/molecule';
 
-import { checkDate } from 'utils/regex';
-import { addDotToDate } from 'utils/date';
+import { checkDate, addDotToDate } from 'utils';
 import { flex } from 'styles';
 import { DateType } from 'types/date';
 
