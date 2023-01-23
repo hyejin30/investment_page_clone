@@ -1,27 +1,21 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
 import Input from 'components/atoms/Input/Input';
-import Button from 'components/atoms/Button';
+import Button from 'components/atoms/Button/Button';
 
 import { flex, fontSize, theme, Z_INDEX } from 'styles';
 
 interface IStrategyNameProps {
+  value: string;
   onChange: (value: string) => void;
   onSave: () => void;
 }
 
-function StrategyName({ onChange, onSave }: IStrategyNameProps) {
-  const [inputValue, setInputValue] = useState('');
-
+function StrategyName({ value, onChange, onSave }: IStrategyNameProps) {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setInputValue(value);
+    onChange(e.target.value);
   };
-
-  useEffect(() => {
-    onChange(inputValue);
-  }, [inputValue]);
 
   return (
     <Wrapper>
@@ -30,11 +24,11 @@ function StrategyName({ onChange, onSave }: IStrategyNameProps) {
           placeholder="전략 이름을 입력해주세요."
           textAlign="left"
           title="strategyName"
-          value={inputValue}
+          value={value}
           onChange={handleInputChange}
         />
       </Input>
-      <SaveBtn disabled={!inputValue} type="button" onClick={onSave}>
+      <SaveBtn disabled={!value} type="button" onClick={onSave}>
         전략 저장
       </SaveBtn>
     </Wrapper>

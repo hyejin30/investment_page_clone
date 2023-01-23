@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { Layout } from 'components/organism';
-import { AllocDateSelect, AllocSetting, AllocStrategyName, AssetList, BackTest } from './components';
+import { AllocDateSelect, AllocSetting, AllocSideBar, AllocStrategyName, AssetList, BackTest } from './components';
 
 import { flex } from 'styles';
 
@@ -9,13 +9,16 @@ function Allocation() {
   return (
     <Layout>
       <Container>
-        <AllocStrategyName />
         <Wrapper>
-          <AllocSetting />
-          <AssetList />
-          <AllocDateSelect />
+          <AllocStrategyName />
+          <Contents>
+            <AllocSetting />
+            <AssetList />
+            <AllocDateSelect />
+          </Contents>
+          <BackTest />
         </Wrapper>
-        <BackTest />
+        <AllocSideBar />
       </Container>
     </Layout>
   );
@@ -24,12 +27,18 @@ function Allocation() {
 export default Allocation;
 
 const Container = styled.div`
+  ${flex('', '')};
+  width: 100%;
+`;
+
+const Wrapper = styled.div`
   ${flex('', '', 'column')};
+  width: 100%;
   row-gap: 60px;
   padding-bottom: 100px;
 `;
 
-const Wrapper = styled.div`
+const Contents = styled.div`
   ${flex('', '', 'column')};
   width: 640px;
   row-gap: 60px;

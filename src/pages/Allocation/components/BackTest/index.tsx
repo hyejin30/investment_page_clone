@@ -3,12 +3,13 @@ import styled from 'styled-components';
 
 import { Button, Text } from 'components/atoms';
 
-import { strategyState } from 'recoil/allocation';
+import { assetListState, strategyState } from 'recoil/allocation';
 import { ALLOC_ALGORITHM, ALLOC_LEVEL, ALLOC_REBALANCING } from 'pages/Allocation/constant';
 
 import { theme } from 'styles';
 
 function BackTest() {
+  const assetList = useRecoilValue(assetListState);
   const strategy = useRecoilValue(strategyState);
 
   const backTest = () => {
@@ -17,6 +18,7 @@ function BackTest() {
     const formatted = {
       algo: ALLOC_ALGORITHM[algo],
       allocRebalancing: ALLOC_REBALANCING[allocRebalancing],
+      assetList,
       level: ALLOC_LEVEL[level],
       ...rest,
     };
