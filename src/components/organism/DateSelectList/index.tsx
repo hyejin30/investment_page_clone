@@ -1,46 +1,47 @@
-import { useState, MouseEvent } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import dayjs from 'dayjs';
 
 import { Calendar, DateSelect } from 'components/molecule';
 import { flex } from 'styles';
+import { DateType } from 'types/date';
 
 function DateSelectList() {
-  const now = dayjs().format('YYYY.MM.DD');
+  const now = dayjs();
 
-  const [startDate, setStartDate] = useState(now);
-  const [endDate, setEndDate] = useState(now);
   const [showStartDateCalendar, setShowStartDateCalendar] = useState(false);
   const [showEndDateCalendar, setShowEndDateCalendar] = useState(false);
+  const [startDate, setStartDate] = useState(now.subtract(20, 'year').format('YYYY.MM.DD'));
+  const [endDate, setEndDate] = useState(now.format('YYYY.MM.DD'));
 
-  const toggleCalendar = (e: MouseEvent<HTMLDivElement>) => {
-    const { title } = e.currentTarget;
+  const toggleCalendar = (title: DateType) => {
     if (title === 'startDate') return setShowStartDateCalendar((prev) => !prev);
     if (title === 'endDate') return setShowEndDateCalendar((prev) => !prev);
   };
 
-  const handleDateSelect = (title: 'startDate' | 'endDate', date: string) => {
-    if (title === 'startDate') return setStartDate(date);
-    if (title === 'endDate') return setEndDate(date);
+  const handleDateSelect = (title: DateType, date: string) => {
+    if (title === 'startDate') setStartDate(date);
+    if (title === 'endDate') setEndDate(date);
+    toggleCalendar(title);
   };
 
   return (
     <Container>
       <DateSelect>
         <DateSelect.Label htmlFor="startDate">시작일 설정</DateSelect.Label>
-        <DateSelect.Input title="startDate" value={startDate} onClick={toggleCalendar} />
+        <DateSelect.Input title="startDate" value={startDate} onClick={() => toggleCalendar('startDate')} />
         {showStartDateCalendar && (
           <CalendarWrap>
-            <Calendar onSelect={handleDateSelect} />
+            <Calendar defaultDate={startDate} title="startDate" onSelect={handleDateSelect} />
           </CalendarWrap>
         )}
       </DateSelect>
       <DateSelect>
         <DateSelect.Label htmlFor="endDate">종료일 설정</DateSelect.Label>
-        <DateSelect.Input title="endDate" value={endDate} onClick={toggleCalendar} />
+        <DateSelect.Input title="endDate" value={endDate} onClick={() => toggleCalendar('endDate')} />
         {showEndDateCalendar && (
           <CalendarWrap>
-            <Calendar onSelect={handleDateSelect} />
+            <Calendar defaultDate={endDate} title="endDate" onSelect={handleDateSelect} />
           </CalendarWrap>
         )}
       </DateSelect>

@@ -6,26 +6,35 @@ import { ko } from 'date-fns/locale';
 import dayjs from 'dayjs';
 
 import { fontSize, theme } from 'styles';
+import { DateType } from 'types/date';
 import 'react-day-picker/dist/style.css';
 
 interface ICalendarProps {
-  onSelect: (title: 'startDate' | 'endDate', date: string) => void;
+  defaultDate: string;
+  title: DateType;
+  onSelect: (title: DateType, date: string) => void;
 }
 
-export default function Calendar({ onSelect }: ICalendarProps) {
+export default function Calendar({ defaultDate, title, onSelect }: ICalendarProps) {
   const [selected, setSelected] = useState<Date>();
   const currentYear = dayjs().year();
+  const [defaultYear, defaultMonth] = defaultDate.split('.');
 
-  useEffect(() => onSelect('startDate', '2023.01.12'), []);
+  useEffect(() => {
+    if (!selected) return;
+    const date = dayjs(selected).format('YYYY.MM.DD');
+    onSelect(title, date);
+  }, [selected]);
 
   return (
     <Container>
       <DayPicker
         captionLayout="dropdown"
-        fromYear={currentYear - 10}
+        defaultMonth={new Date(+defaultYear, +defaultMonth - 1)}
+        fromYear={currentYear - 20}
         locale={ko}
         mode="single"
-        selected={selected}
+        selected={selected || new Date(defaultDate)}
         toYear={currentYear}
         onSelect={setSelected}
       />
@@ -38,7 +47,7 @@ const Container = styled.div`
 
   .rdp {
     margin: 0;
-    padding: 10px;
+    padding: 20px 15px 15px;
     background: ${theme.lightBlack};
     border: 1px solid ${theme.gray};
     border-radius: 5px;
@@ -46,17 +55,17 @@ const Container = styled.div`
   }
 
   .rdp-caption {
-    padding: 5px 0;
+    margin-bottom: 5px;
   }
 
   .rdp-dropdown_year {
     position: relative;
-    left: -60px;
+    left: -55px;
   }
 
   .rdp-dropdown_month {
     position: relative;
-    left: 80px;
+    left: 85px;
   }
 
   .rdp-head_cell {
