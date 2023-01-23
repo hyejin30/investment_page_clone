@@ -8,9 +8,11 @@ interface ITextRegular {
   color?: string;
 }
 
-function TextRegular({ children, weight = 300, color = theme.white }: ITextRegular) {
+function TextRegular(props: ITextRegular) {
+  const { children, weight = 300, color = theme.white, ...restProps } = props;
+
   return (
-    <Text color={color} weight={weight}>
+    <Text color={color} weight={weight} {...restProps}>
       {children}
     </Text>
   );

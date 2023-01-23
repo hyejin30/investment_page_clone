@@ -8,9 +8,11 @@ interface ITextSmall {
   color?: string;
 }
 
-function TextSmall({ children, weight = 300, color = theme.white }: ITextSmall) {
+function TextSmall(props: ITextSmall) {
+  const { children, weight = 300, color = theme.white, ...restProps } = props;
+
   return (
-    <Text color={color} weight={weight}>
+    <Text color={color} weight={weight} {...restProps}>
       {children}
     </Text>
   );
