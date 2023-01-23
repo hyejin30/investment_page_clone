@@ -1,7 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Allocation from 'pages/Allocation';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { RecoilRoot } from 'recoil';
+
+import Allocation from 'pages/Allocation';
 import GlobalStyle from 'styles/globalStyle';
 
 function App() {
@@ -11,11 +13,13 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen />
       <GlobalStyle />
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Allocation />} path="/" />
-        </Routes>
-      </BrowserRouter>
+      <RecoilRoot>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Allocation />} path="/" />
+          </Routes>
+        </BrowserRouter>
+      </RecoilRoot>
     </QueryClientProvider>
   );
 }

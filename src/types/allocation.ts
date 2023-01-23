@@ -1,12 +1,16 @@
 import { ALLOC_ALGORITHM, ALLOC_LEVEL, ALLOC_REBALANCING } from 'pages/Allocation/constant';
 
-export interface IAllocation {
-  algo: keyof typeof ALLOC_ALGORITHM.en;
-  allocRebalancing: keyof typeof ALLOC_REBALANCING.en;
+type IAllocAlgoList = keyof typeof ALLOC_ALGORITHM;
+type IAllocRebalancingList = keyof typeof ALLOC_REBALANCING;
+type IAllocLevelList = keyof typeof ALLOC_LEVEL;
+
+export interface IStrategy {
+  algo: IAllocAlgoList;
+  allocRebalancing: IAllocRebalancingList;
   assetList: IAsset[];
   band: string;
   endDate: string;
-  level: keyof typeof ALLOC_LEVEL.en;
+  level: IAllocLevelList;
   startDate: string;
   strategyName: string;
 }
