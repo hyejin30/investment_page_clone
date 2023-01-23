@@ -1,8 +1,11 @@
-import { useState, MouseEvent, ChangeEvent } from 'react';
+import { useState, MouseEvent, ChangeEvent, useEffect } from 'react';
+import { useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
 
 import { Button, Text } from 'components/atoms';
 import Asset from './components/Asset';
+
+import { strategyState } from 'recoil/allocation';
 
 import { flex } from 'styles';
 import { IAsset } from 'types/allocation';
@@ -10,6 +13,8 @@ import { IAsset } from 'types/allocation';
 function AssetList() {
   const [assetList, setAssetList] = useState<IAsset[]>([]);
   const [showDropdown, setShowDropdown] = useState<{ [key: string]: boolean }>({});
+
+  const setStrategy = useSetRecoilState(strategyState);
 
   const addAsset = () => {
     const item = { name: '', ratio: '' };
@@ -47,6 +52,10 @@ function AssetList() {
   const toggleDropdown = (title: string) => {
     setShowDropdown((prev) => ({ ...prev, [title]: !prev[title] }));
   };
+
+  useEffect(() => {
+    setStrategy((prev) => ({ ...prev, assetList }));
+  }, [assetList]);
 
   return (
     <Container>
