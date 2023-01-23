@@ -8,11 +8,11 @@ import { checkDate, addDotToDate } from 'utils';
 import { flex } from 'styles';
 import { DateType } from 'types/date';
 
-interface IDateSelectListProps {
+interface IMultiDateSelectProps {
   onSelect: (startDate: string, endDate: string) => void;
 }
 
-function DateSelectList({ onSelect }: IDateSelectListProps) {
+function MultiDateSelect({ onSelect }: IMultiDateSelectProps) {
   const now = dayjs();
   const initialStartDate = now.subtract(20, 'year').format('YYYY.MM.DD');
   const initialEndDate = now.format('YYYY.MM.DD');
@@ -92,7 +92,7 @@ function DateSelectList({ onSelect }: IDateSelectListProps) {
   );
 }
 
-export default DateSelectList;
+export default MultiDateSelect;
 
 const Container = styled.div`
   ${flex('', '')};

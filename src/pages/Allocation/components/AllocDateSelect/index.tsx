@@ -1,6 +1,6 @@
 import { useSetRecoilState } from 'recoil';
 
-import { DateSelectList } from 'components/organism';
+import { MultiDateSelect } from 'components/organism';
 
 import { strategyState } from 'recoil/allocation';
 
@@ -11,7 +11,7 @@ function AllocDateSelect() {
     setStrategy((prev) => ({ ...prev, startDate, endDate }));
   };
 
-  return <DateSelectList onSelect={handleDateSelect} />;
+  return <MultiDateSelect onSelect={handleDateSelect} />;
 }
 
 export default AllocDateSelect;
