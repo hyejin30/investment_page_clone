@@ -11,7 +11,9 @@ function AllocSideBar() {
 
   return (
     <Container>
-      <ResetButton onClick={() => resetStrategy()}>설정 값 초기화</ResetButton>
+      <Wrapper>
+        <ResetButton onClick={() => resetStrategy()}>설정 값 초기화</ResetButton>
+      </Wrapper>
     </Container>
   );
 }
@@ -19,7 +21,13 @@ function AllocSideBar() {
 export default AllocSideBar;
 
 const Container = styled(SideBar)`
+  position: sticky;
+  top: 250px;
+  height: 100%;
+`;
+
+const Wrapper = styled.div`
   position: absolute;
-  top: 200px;
-  right: -200px;
+  top: 100px;
+  right: -220px;
 `;
