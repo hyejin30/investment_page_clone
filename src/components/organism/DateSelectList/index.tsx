@@ -1,4 +1,4 @@
-import { ChangeEvent, FocusEvent, useState } from 'react';
+import { ChangeEvent, FocusEvent, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import dayjs from 'dayjs';
 
@@ -8,7 +8,11 @@ import { checkDate, addDotToDate } from 'utils';
 import { flex } from 'styles';
 import { DateType } from 'types/date';
 
-function DateSelectList() {
+interface IDateSelectListProps {
+  onSelect: (startDate: string, endDate: string) => void;
+}
+
+function DateSelectList({ onSelect }: IDateSelectListProps) {
   const now = dayjs();
   const initialStartDate = now.subtract(20, 'year').format('YYYY.MM.DD');
   const initialEndDate = now.format('YYYY.MM.DD');
@@ -47,6 +51,10 @@ function DateSelectList() {
     if (title === 'startDate' && (year < startYear || !checkDate(value))) return setStartDate(initialStartDate);
     if (title === 'endDate' && (year > endYear || !checkDate(value))) return setEndDate(initialEndDate);
   };
+
+  useEffect(() => {
+    onSelect(startDate, endDate);
+  }, [startDate, endDate]);
 
   return (
     <Container>

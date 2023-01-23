@@ -59,7 +59,7 @@
         "tsx": "never"
       }
     ],
-    // "import/no-extraneous-dependencies": false,
+    "import/no-extraneous-dependencies": false,
     "jsx-a11y/media-has-caption": ["off"],
     "no-alert": "off",
     "no-console": "off",
