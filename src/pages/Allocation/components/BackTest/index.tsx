@@ -8,18 +8,24 @@ import { Button, Text } from 'components/atoms';
 import { assetListState, strategyState } from 'recoil/allocation';
 import { ALLOC_ALGORITHM, ALLOC_LEVEL, ALLOC_REBALANCING } from 'pages/Allocation/constant';
 
+import { checkBlank } from 'utils';
 import { flex, theme } from 'styles';
 
 function BackTest() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [showErrorModal, setShowErrorModal] = useState(false);
 
   const timerId = useRef<NodeJS.Timer | null>(null);
   const assetList = useRecoilValue(assetListState);
   const strategy = useRecoilValue(strategyState);
 
   const createBackTest = () => {
+    const values = Object.values(strategy);
+
+    if (!checkBlank<string>(values)) return setShowErrorModal((prev) => !prev);
+
     setIsLoading(true);
   };
 
@@ -103,6 +109,7 @@ function BackTest() {
           </Text.Medium>
         </BackTestBtn>
       )}
+      {showErrorModal && <div style={{ color: 'white' }}>Error Modal</div>}
     </Container>
   );
 }
