@@ -9,7 +9,7 @@ interface ILabelProps extends HTMLAttributes<HTMLLabelElement> {
 function Label({ children, htmlFor }: ILabelProps) {
   return (
     <label htmlFor={htmlFor}>
-      <Text.Regular weight={400}>{children}</Text.Regular>
+      <Text.Regular>{children}</Text.Regular>
     </label>
   );
 }

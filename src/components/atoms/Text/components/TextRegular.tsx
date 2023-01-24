@@ -9,7 +9,7 @@ interface ITextRegular {
 }
 
 function TextRegular(props: ITextRegular) {
-  const { children, weight = 300, color = theme.white, ...restProps } = props;
+  const { children, weight = 400, color = theme.white, ...restProps } = props;
 
   return (
     <Text color={color} weight={weight} {...restProps}>
