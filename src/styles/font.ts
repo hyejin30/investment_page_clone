@@ -11,6 +11,6 @@ export const font = (size: number, weight: number, lineHeight: number = 0) => cs
 export const fontSize = {
   large: '28px',
   medium: '18px',
-  regular: '14px',
-  small: '12px',
+  regular: '16px',
+  small: '14px',
 };
