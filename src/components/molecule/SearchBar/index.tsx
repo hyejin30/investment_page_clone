@@ -22,7 +22,7 @@ function SearchBar({ placeholder, title, onChange }: ISearchBarProps) {
   return (
     <Container>
       <SearchIcon>
-        <img alt="search" src="https://hyejin30.github.io/investment_site_project/images/ic-search.svg" />
+        <img alt="search" src="/images/ic-search.svg" />
       </SearchIcon>
       <Input>
         <Input.Value

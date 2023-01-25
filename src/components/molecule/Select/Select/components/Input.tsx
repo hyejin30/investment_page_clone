@@ -20,10 +20,7 @@ function SelectInput(props: ISelectInputProps) {
       <StyledInputValue readOnly {...restProps} />
       <Input.Right>
         <Arrow isSelect={isSelect}>
-          <img
-            alt="arrow down"
-            src="https://hyejin30.github.io/investment_site_project/images/ic-arrow-down-orange.svg"
-          />
+          <img alt="arrow down" src="/images/ic-arrow-down-orange.svg" />
         </Arrow>
       </Input.Right>
     </StyledInput>
