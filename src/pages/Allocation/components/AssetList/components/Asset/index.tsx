@@ -58,8 +58,6 @@ function Asset({
       </AssetDropdown>
       <NumberInput
         label="비중"
-        max="100"
-        min="0"
         subMessage="0 ~ 100까지 입력할 수 있습니다."
         title={`asset-${index}`}
         value={asset.ratio}

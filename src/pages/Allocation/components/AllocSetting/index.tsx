@@ -8,6 +8,7 @@ import { Dropdown, Select } from 'components/molecule';
 import { strategyState } from 'recoil/allocation';
 import { ALLOC_ALGORITHM_LIST, ALLOC_REBALANCING_LIST } from 'pages/Allocation/constant';
 
+import { ensureInRange } from 'utils';
 import { flex } from 'styles';
 
 function AllocSetting() {
@@ -19,7 +20,7 @@ function AllocSetting() {
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { title, value } = e.target;
-    if (title === 'band') return setStrategy((prev) => ({ ...prev, [title]: value }));
+    if (title === 'band') return setStrategy((prev) => ({ ...prev, [title]: ensureInRange(value, 0, 100) }));
   };
 
   const handleSelectInputClick = (e: MouseEvent<HTMLDivElement>) => {
@@ -88,8 +89,6 @@ function AllocSetting() {
       </Dropdown>
       <NumberInput
         label="밴드 리밸런싱"
-        max="100"
-        min="0"
         subMessage="0 ~ 100까지 입력할 수 있습니다. (0 입력시 비활성화)"
         title="band"
         value={band}

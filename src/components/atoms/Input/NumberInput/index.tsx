@@ -2,31 +2,22 @@ import { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
 import Input from 'components/atoms/Input/Input';
+
 import { theme } from 'styles';
 
 interface INumberInputProps {
   label?: string;
-  max?: string;
-  min?: string;
   subMessage?: string;
   value: string;
   title: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-function NumberInput({ label, max, min, subMessage, value, title, onChange }: INumberInputProps) {
+function NumberInput({ label, subMessage, value, title, onChange }: INumberInputProps) {
   return (
     <StyledInput>
       {label && <Input.Label htmlFor={title}>{label}</Input.Label>}
-      <Input.Value
-        max={max}
-        min={min}
-        textAlign="center"
-        title={title}
-        type="number"
-        value={value}
-        onChange={onChange}
-      />
+      <Input.Value textAlign="center" title={title} type="number" value={value} onChange={onChange} />
       <Input.Right>
         <Percentage>%</Percentage>
       </Input.Right>

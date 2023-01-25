@@ -7,7 +7,7 @@ export const strategyState = atom<IStrategy>({
   default: {
     algo: '전략배분 (정적자산배분)',
     allocRebalancing: '',
-    band: '0',
+    band: '',
     endDate: dayjs().format('YYYY.MM.DD'),
     level: '중급',
     startDate: dayjs().subtract(20, 'year').format('YYYY.MM.DD'),
