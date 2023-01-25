@@ -9,7 +9,7 @@
 
 <br />
 
-<img width="1016" alt="image" src="https://user-images.githubusercontent.com/98295004/214603249-849fc186-54ac-455f-ab22-350eb782cf10.png">
+<img width="740" alt="image" src="https://user-images.githubusercontent.com/98295004/214611708-3e5702c8-1c30-402b-b486-6b2d1cb250de.png">
 
 <br />
 
