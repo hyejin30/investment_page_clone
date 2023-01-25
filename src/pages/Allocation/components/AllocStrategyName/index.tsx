@@ -8,6 +8,7 @@ import { StrategyName } from 'components/organism';
 
 import { assetListState, strategyState } from 'recoil/allocation';
 import { ALLOC_ALGORITHM, ALLOC_REBALANCING, ALLOC_LEVEL } from 'pages/Allocation/constant';
+import { Z_INDEX } from 'styles';
 
 function AllocStrategyName() {
   const [showCompleteModal, setShowCompleteModal] = useState(false);
@@ -41,20 +42,20 @@ function AllocStrategyName() {
   };
 
   return (
-    <Modal>
-      <Modal.Trigger>
-        <StrategyName value={strategyName} onChange={handleStrategyNameChange} onSave={handleStrategySave} />
-      </Modal.Trigger>
-      <Modal.Dimmed isOpen={showCompleteModal} onClose={toggleCompleteModal} />
-      <Modal.Contents isOpen={showCompleteModal} onClose={toggleCompleteModal}>
-        <Modal.Title>전략 저장 완료</Modal.Title>
-        <Description>
-          <Text.Regular weight={300}>{`"${strategyName}" 전략 저장이 완료되었습니다.`}</Text.Regular>
-          <Text.Regular weight={300}>저장된 전략은 마이페이지-전략 조회에서 조회 가능합니다.</Text.Regular>
-        </Description>
-        <Modal.Button onClick={toggleCompleteModal}>확인</Modal.Button>
-      </Modal.Contents>
-    </Modal>
+    <Container>
+      <StrategyName value={strategyName} onChange={handleStrategyNameChange} onSave={handleStrategySave} />
+      <Modal>
+        <Modal.Dimmed isOpen={showCompleteModal} onClose={toggleCompleteModal} />
+        <Modal.Contents isOpen={showCompleteModal} onClose={toggleCompleteModal}>
+          <Modal.Title>전략 저장 완료</Modal.Title>
+          <Description>
+            <Text.Regular weight={300}>{`"${strategyName}" 전략 저장이 완료되었습니다.`}</Text.Regular>
+            <Text.Regular weight={300}>저장된 전략은 마이페이지-전략 조회에서 조회 가능합니다.</Text.Regular>
+          </Description>
+          <Modal.Button onClick={toggleCompleteModal}>확인</Modal.Button>
+        </Modal.Contents>
+      </Modal>
+    </Container>
   );
 }
 
@@ -62,4 +63,10 @@ export default AllocStrategyName;
 
 const Description = styled(Modal.Description)`
   row-gap: 10px;
+`;
+
+const Container = styled.div`
+  position: sticky;
+  top: 131px;
+  z-index: ${Z_INDEX.header};
 `;
