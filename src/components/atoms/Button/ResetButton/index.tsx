@@ -13,7 +13,7 @@ function ResetButton({ children, onClick }: IResetButtonProps) {
   return (
     <Container onClick={onClick}>
       <ResetIcon>
-        <img alt="reset" src="images/ic-reset-white.svg" />
+        <img alt="reset" src="https://hyejin30.github.io/investment_site_project/images/ic-reset-white.svg" />
       </ResetIcon>
       <Button bgColor="none" color={theme.GRAY_LIGHT_X1} weight={300}>
         {children}

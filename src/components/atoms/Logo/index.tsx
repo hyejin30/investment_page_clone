@@ -12,14 +12,14 @@ function Logo({ width = 156, path = '' }: ILogoProps) {
     return (
       <Link to={path}>
         <Wrapper width={width}>
-          <img alt="logo" src="images/ic-logo.png" />
+          <img alt="logo" src="https://hyejin30.github.io/investment_site_project/images/ic-logo.png" />
         </Wrapper>
       </Link>
     );
   }
   return (
     <Wrapper width={width}>
-      <img alt="logo" src="images/ic-logo.png" />
+      <img alt="logo" src="https://hyejin30.github.io/investment_site_project/images/ic-logo.png" />
     </Wrapper>
   );
 }
