@@ -28,7 +28,7 @@ function StrategyName({ value, onChange, onSave }: IStrategyNameProps) {
           onChange={handleInputChange}
         />
       </Input>
-      <SaveBtn disabled={!value} type="button" onClick={onSave}>
+      <SaveBtn disabled={!value} type="button" weight={400} onClick={onSave}>
         전략 저장
       </SaveBtn>
     </Wrapper>
@@ -60,5 +60,5 @@ const InputValue = styled(Input.Value)`
 `;
 
 const SaveBtn = styled(Button)`
-  padding: 0 30px;
+  padding: 12px 30px;
 `;
