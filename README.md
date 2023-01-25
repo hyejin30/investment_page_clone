@@ -43,4 +43,4 @@ json-server ./db.json --port 4000
 
 Jira를 이용해 할 일을 관리했습니다.
 
-<img width="697" alt="image" src="https://user-images.githubusercontent.com/98295004/213692592-d4615609-b08b-4c4d-9c9c-9b38cda6f348.png">
+<img width="480" alt="image" src="https://user-images.githubusercontent.com/98295004/214599164-993fd577-0cb0-4ab8-b7c7-247ea15e5038.png">
