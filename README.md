@@ -23,6 +23,7 @@ yarn create react-app investment_page_project --template typescript
 
 ```
 git clone https://github.com/hyejin30/investment_page_project
+cd investment_page_clone
 yarn install
 yarn add global json-server
 ```
@@ -32,7 +33,6 @@ yarn add global json-server
 ## 프로젝트 및 json-server 실행
 
 ```
-cd investment_page_clone
 yarn start
 json-server ./db.json --port 4000
 ```
