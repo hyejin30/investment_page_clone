@@ -45,7 +45,7 @@ function AllocSetting() {
         <Dropdown.Trigger>
           <Select>
             <Select.Label htmlFor="algo">자산배분 알고리즘</Select.Label>
-            <Select.Input title="algo" value={algo} onClick={handleSelectInputClick} />
+            <Select.Input isSelect={showAlgoDropdown} title="algo" value={algo} onClick={handleSelectInputClick} />
           </Select>
         </Dropdown.Trigger>
         <Dropdown.List isOpen={showAlgoDropdown}>
@@ -66,6 +66,7 @@ function AllocSetting() {
           <Select>
             <Select.Label htmlFor="allocRebalancing">주기 리밸런싱</Select.Label>
             <Select.Input
+              isSelect={showAllocRebalancingDropdown}
               title="allocRebalancing"
               value={allocRebalancing || '주기 리밸런싱을 선택해주세요.'}
               onClick={handleSelectInputClick}
