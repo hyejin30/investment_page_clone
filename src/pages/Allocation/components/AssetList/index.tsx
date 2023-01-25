@@ -67,7 +67,11 @@ function AssetList() {
           onSelectInputClick={handleSelectInputClick}
         />
       ))}
-      {assetList?.length === 0 && <AddBtn onClick={addAsset}>추가하기</AddBtn>}
+      {assetList?.length === 0 && (
+        <AddBtn weight={400} onClick={addAsset}>
+          추가하기
+        </AddBtn>
+      )}
     </Container>
   );
 }

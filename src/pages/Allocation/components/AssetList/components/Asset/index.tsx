@@ -67,7 +67,9 @@ function Asset({
       />
       <BtnList>
         {isLastAsset && <AddBtn onClick={onAdd}>추가하기</AddBtn>}
-        <DeleteBtn onClick={onDelete}>삭제하기</DeleteBtn>
+        <DeleteBtn bgColor={theme.black} color={theme.white} weight={400} onClick={onDelete}>
+          삭제하기
+        </DeleteBtn>
       </BtnList>
     </Container>
   );

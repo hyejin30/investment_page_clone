@@ -120,15 +120,11 @@ function BackTest() {
         <Modal.Dimmed isOpen={showErrorModal} onClose={toggleErrorModal} />
         <Modal.Contents isOpen={showErrorModal} onClose={toggleErrorModal}>
           <Modal.Title>필수 항목 미설정</Modal.Title>
-          <Modal.Description>
-            <Text.Regular>[필수] 모든 항목을 설정 해주셔야</Text.Regular>
-            <Text.Regular>백테스트 이(가) 실행됩니다.</Text.Regular>
-          </Modal.Description>
-          <Modal.Button bgColor="none" onClick={toggleErrorModal}>
-            <Text.Regular color={theme.orange} weight={700}>
-              확인
-            </Text.Regular>
-          </Modal.Button>
+          <Description>
+            <Text.Regular weight={300}>[필수] &quot;모든 항목을 설정&quot; 해주셔야</Text.Regular>
+            <Text.Regular weight={300}>백테스트 이(가) 실행됩니다.</Text.Regular>
+          </Description>
+          <Modal.Button onClick={toggleErrorModal}>확인</Modal.Button>
         </Modal.Contents>
       </Modal>
     </Container>
@@ -171,4 +167,8 @@ const MessageWrap = styled.div`
   ${flex('center', 'center')}
   width: 100%;
   column-gap: 10px;
+`;
+
+const Description = styled(Modal.Description)`
+  row-gap: 10px;
 `;

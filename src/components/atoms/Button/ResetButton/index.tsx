@@ -2,7 +2,6 @@ import { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
 import Button from 'components/atoms/Button/Button';
-import Text from 'components/atoms/Text';
 
 import { fitImg, theme, flex } from 'styles';
 
@@ -12,25 +11,25 @@ interface IResetButtonProps extends HTMLAttributes<HTMLButtonElement> {
 
 function ResetButton({ children, onClick }: IResetButtonProps) {
   return (
-    <StyledButton onClick={onClick}>
+    <Container onClick={onClick}>
       <ResetIcon>
         <img alt="reset" src="/images/ic-reset-white.svg" />
       </ResetIcon>
-      <Text.Medium weight={300}>{children}</Text.Medium>
-    </StyledButton>
+      <Button bgColor="none" color={theme.white} weight={300}>
+        {children}
+      </Button>
+    </Container>
   );
 }
 
 export default ResetButton;
 
-const StyledButton = styled(Button)`
-  ${flex('', 'center')}
+const Container = styled.div`
+  ${flex('', 'center')};
   column-gap: 10px;
   padding: 15px 25px;
-  background: none;
   border: 1px solid ${theme.orange};
   border-radius: 30px;
-  color: ${theme.white};
 `;
 
 const ResetIcon = styled.div`

@@ -19,7 +19,8 @@ const Container = styled.div`
   ${flex('', 'center', 'column')};
   position: fixed;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: ${theme.lightBlack};
   border-radius: 8px;
   border-bottom: 1px solid ${theme.black};

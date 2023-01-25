@@ -14,7 +14,8 @@ function Description(props: IDescriptionProps) {
 export default Description;
 
 const Container = styled.div`
-  ${flex('', '', 'column')};
+  ${flex('', 'center', 'column')};
+  min-width: 420px;
   padding: 30px;
   border-bottom: 1px solid ${theme.black};
 `;
