@@ -11,7 +11,6 @@
 
 <img width="740" alt="image" src="https://user-images.githubusercontent.com/98295004/214611708-3e5702c8-1c30-402b-b486-6b2d1cb250de.png">
 
-<br />
 
 ## 선정 이유
 - Select, Dropdown 컴포넌트 재사용 
