@@ -17,7 +17,7 @@ function Tabs({ children, ...restProps }: ITabsProps) {
     <Container {...restProps}>
       {children &&
         Children.toArray(children).map((child, index) => (
-          <TabBtn isActive={index === activeTabIndex} onClick={() => handleTabClick(index)}>
+          <TabBtn key={`tab-${index}`} isActive={index === activeTabIndex} onClick={() => handleTabClick(index)}>
             {child}
           </TabBtn>
         ))}

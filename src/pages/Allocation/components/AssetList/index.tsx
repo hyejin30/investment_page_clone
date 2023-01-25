@@ -7,6 +7,7 @@ import Asset from './components/Asset';
 
 import { assetListState } from 'recoil/allocation';
 import { flex } from 'styles';
+import { ensureInRange } from 'utils';
 
 function AssetList() {
   const [showDropdown, setShowDropdown] = useState<{ [key: string]: boolean }>({});
@@ -35,7 +36,7 @@ function AssetList() {
 
   const handleRatioInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { title, value } = e.target;
-    updateAsset('ratio', title, value);
+    updateAsset('ratio', title, ensureInRange(value, 0, 100));
   };
 
   const updateAsset = (key: 'name' | 'ratio', title: string, value: string) => {

@@ -5,8 +5,6 @@ import { theme, fontSize } from 'styles';
 interface IValueProps extends HTMLAttributes<HTMLInputElement> {
   title: HTMLInputElement['title'];
   maxLength?: number;
-  max?: string;
-  min?: string;
   placeholder?: string;
   readOnly?: boolean;
   type?: 'text' | 'number' | 'email' | 'password';
