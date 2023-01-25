@@ -145,6 +145,18 @@ const Modal = Object.assign(Layout, {
 
 - type=”number” 인풋은 0~100 숫자만 입력되도록 `ensureInRange` 유틸 함수 활용
 
+```typescript
+const ensureInRange = (value: string, min: number, max: number): string => {
+  const hasPrefixZero = value.startsWith('0');
+  const num = Number(hasPrefixZero ? value.replaceAll('0', '') : value);
+
+  if (num < min) return String(min);
+  if (num > max) return String(max);
+
+  return String(num);
+};
+```
+
 ![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/98295004/214609408-eb250297-e875-4fca-9080-79af6f8dc75f.gif)
 
 <br />
@@ -188,6 +200,14 @@ const updateAsset = (key: 'name' | 'ratio', title: string, value: string) => {
 - 필수 값 에러 핸들링
     - `checkBlank` 유틸 함수를 사용해 필수 값 입력 여부 체크
     - 입력하지 않은 값이 있을 경우 Error 모달 렌더링
+
+```typescript
+const checkBlank = <T>(array: T[]) => {
+  const isValid = !array.some((el) => Number(el) === 0 || !el);
+  return isValid;
+};
+
+```
 
 ![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/98295004/214611085-e65ad9da-4f13-4002-8f76-3d401f85da71.gif)
 
