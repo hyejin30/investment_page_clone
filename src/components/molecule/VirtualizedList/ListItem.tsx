@@ -20,7 +20,7 @@ function ListItem<T extends IStock>({ data, style, title, onClick }: IListItemPr
   };
   return (
     <Container style={style} title={title} onClick={onClick}>
-      <Text.Regular>{renderText()}</Text.Regular>
+      <Text.Regular weight={300}>{renderText()}</Text.Regular>
     </Container>
   );
 }

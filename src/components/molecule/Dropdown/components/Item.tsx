@@ -15,7 +15,7 @@ function Item(props: IItemProps) {
   const { children, ...restProps } = props;
   return (
     <Container {...restProps}>
-      <Text.Regular>{children}</Text.Regular>
+      <Text.Regular weight={300}>{children}</Text.Regular>
     </Container>
   );
 }
