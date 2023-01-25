@@ -162,7 +162,7 @@ const updateAsset = (key: 'name' | 'ratio', title: string, value: string) => {
 };
 ```
 
-- 주식 목록 (> [PR 참고](https://github.com/hyejin30/investment_site_project/pull/33))
+- 주식 10만개 렌더링 (> [PR 참고](https://github.com/hyejin30/investment_site_project/pull/33))
   - 10만개를 렌더링할 경우 버벅임이 심했음 
   - 뷰포트 내의 요소만 렌더링하는 react-virtualized 라이브러리를 사용해 렌더링 최적화
   
