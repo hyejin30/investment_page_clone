@@ -1,10 +1,11 @@
 import { MouseEvent } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Input } from 'components/atoms';
 import { theme } from 'styles';
 
 interface ISelectInputProps {
+  isSelect: boolean;
   placeholder?: string;
   title: string;
   value: string;
@@ -12,13 +13,13 @@ interface ISelectInputProps {
 }
 
 function SelectInput(props: ISelectInputProps) {
-  const { onClick, ...restProps } = props;
+  const { isSelect, onClick, ...restProps } = props;
 
   return (
     <StyledInput title={restProps.title} onClick={onClick}>
       <StyledInputValue readOnly {...restProps} />
       <Input.Right>
-        <Arrow>
+        <Arrow isSelect={isSelect}>
           <img alt="arrow down" src="/images/ic-arrow-down-orange.svg" />
         </Arrow>
       </Input.Right>
@@ -27,6 +28,8 @@ function SelectInput(props: ISelectInputProps) {
 }
 
 export default SelectInput;
+
+type IArrowStyle = Pick<ISelectInputProps, 'isSelect'>;
 
 const StyledInput = styled(Input)`
   cursor: pointer;
@@ -46,11 +49,18 @@ const StyledInputValue = styled(Input.Value)`
   }
 `;
 
-const Arrow = styled.div`
+const Arrow = styled.div<IArrowStyle>`
   position: absolute;
   top: 12px;
   right: 30px;
   width: 10px;
   height: 10px;
   cursor: pointer;
+  ${(props) => (props.isSelect ? ReverseArrow : '')};
+`;
+
+const ReverseArrow = css`
+  img {
+    transform: rotate(-180deg);
+  }
 `;

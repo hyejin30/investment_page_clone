@@ -52,7 +52,7 @@ function Asset({
         <Dropdown.Trigger>
           <Select>
             <Select.Label htmlFor={title}>{`자산 ${fillZero(index)}`}</Select.Label>
-            <Select.Input title={title} value={asset.name} onClick={onSelectInputClick} />
+            <Select.Input isSelect={isOpen} title={title} value={asset.name} onClick={onSelectInputClick} />
           </Select>
         </Dropdown.Trigger>
       </AssetDropdown>
