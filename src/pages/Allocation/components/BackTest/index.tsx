@@ -10,6 +10,7 @@ import { ALLOC_ALGORITHM, ALLOC_LEVEL, ALLOC_REBALANCING } from 'pages/Allocatio
 
 import { checkBlank } from 'utils';
 import { flex, theme } from 'styles';
+import { Modal } from 'components/molecule';
 
 function BackTest() {
   const [isLoading, setIsLoading] = useState(false);
@@ -54,6 +55,10 @@ function BackTest() {
     if (timerId.current === null) return;
     clearInterval(timerId.current);
     timerId.current = null;
+  };
+
+  const toggleErrorModal = () => {
+    setShowErrorModal((prev) => !prev);
   };
 
   useEffect(() => {
@@ -102,14 +107,30 @@ function BackTest() {
           </MessageWrap>
         </ProgressBtn>
       )}
-      {!isLoading && !isSuccess && (
-        <BackTestBtn onClick={createBackTest}>
-          <Text.Medium color={theme.black} weight={700}>
-            백테스트
-          </Text.Medium>
-        </BackTestBtn>
-      )}
-      {showErrorModal && <div style={{ color: 'white' }}>Error Modal</div>}
+      <Modal>
+        <Modal.Trigger>
+          {!isLoading && !isSuccess && (
+            <BackTestBtn onClick={createBackTest}>
+              <Text.Medium color={theme.black} weight={700}>
+                백테스트
+              </Text.Medium>
+            </BackTestBtn>
+          )}
+        </Modal.Trigger>
+        <Modal.Dimmed isOpen={showErrorModal} onClose={toggleErrorModal} />
+        <Modal.Contents isOpen={showErrorModal} onClose={toggleErrorModal}>
+          <Modal.Title>필수 항목 미설정</Modal.Title>
+          <Modal.Description>
+            <Text.Regular>[필수] 모든 항목을 설정 해주셔야</Text.Regular>
+            <Text.Regular>백테스트 이(가) 실행됩니다.</Text.Regular>
+          </Modal.Description>
+          <Modal.Button bgColor="none" onClick={toggleErrorModal}>
+            <Text.Regular color={theme.orange} weight={700}>
+              확인
+            </Text.Regular>
+          </Modal.Button>
+        </Modal.Contents>
+      </Modal>
     </Container>
   );
 }

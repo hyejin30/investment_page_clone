@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { theme } from 'styles';
 
 interface IButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  bgColor?: string;
   children: ReactNode;
   disabled?: boolean;
   type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
@@ -10,10 +11,10 @@ interface IButtonProps extends HTMLAttributes<HTMLButtonElement> {
 }
 
 function Button(props: IButtonProps) {
-  const { type = 'button', children, ...restProps } = props;
+  const { type = 'button', bgColor = theme.orange, children, ...restProps } = props;
 
   return (
-    <StyledButton type={type} {...restProps}>
+    <StyledButton bgColor={bgColor} type={type} {...restProps}>
       {children}
     </StyledButton>
   );
@@ -25,8 +26,7 @@ type IButtonStyle = Omit<IButtonProps, 'children'>;
 
 const StyledButton = styled.button<IButtonStyle>`
   border-radius: 8px;
-  background: ${theme.orange};
-  color: ${theme.black};
+  background: ${(props) => props.bgColor};
   white-space: nowrap;
 
   :disabled {
