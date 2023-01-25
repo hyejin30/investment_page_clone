@@ -36,7 +36,7 @@ const StyledInput = styled(Input)`
 `;
 
 const StyledInputValue = styled(Input.Value)`
-  border: 1px solid ${theme.GRAY_LIGHT_X2};
+  border: 1px solid ${theme.GRAY_LIGHT_X3};
   border-radius: 5px;
   cursor: pointer;
 
