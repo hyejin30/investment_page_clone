@@ -16,7 +16,7 @@ function App() {
       <RecoilRoot>
         <BrowserRouter>
           <Routes>
-            <Route element={<Allocation />} path="/" />
+            <Route element={<Allocation />} path="/investment_site_project" />
           </Routes>
         </BrowserRouter>
       </RecoilRoot>
