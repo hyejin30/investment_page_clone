@@ -26,7 +26,7 @@ function AllocStrategyName() {
     // 2. 저장 API 대신 console.log로 최종 값 확인
     const formatted = {
       algo: ALLOC_ALGORITHM[algo],
-      allocRebalancing: ALLOC_REBALANCING[allocRebalancing],
+      allocRebalancing: allocRebalancing ? ALLOC_REBALANCING[allocRebalancing] : '',
       assetList,
       level: ALLOC_LEVEL[level],
       strategyName,

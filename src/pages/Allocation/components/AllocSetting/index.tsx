@@ -65,7 +65,11 @@ function AllocSetting() {
         <Dropdown.Trigger>
           <Select>
             <Select.Label htmlFor="allocRebalancing">주기 리밸런싱</Select.Label>
-            <Select.Input title="allocRebalancing" value={allocRebalancing} onClick={handleSelectInputClick} />
+            <Select.Input
+              title="allocRebalancing"
+              value={allocRebalancing || '주기 리밸런싱을 선택해주세요.'}
+              onClick={handleSelectInputClick}
+            />
           </Select>
         </Dropdown.Trigger>
         <Dropdown.List isOpen={showAllocRebalancingDropdown}>

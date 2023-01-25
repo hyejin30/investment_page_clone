@@ -5,6 +5,7 @@ import { Input } from 'components/atoms';
 import { theme } from 'styles';
 
 interface ISelectInputProps {
+  placeholder?: string;
   title: string;
   value: string;
   onClick: (e: MouseEvent<HTMLDivElement>) => void;

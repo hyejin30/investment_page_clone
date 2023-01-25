@@ -15,8 +15,8 @@ import { Modal } from 'components/molecule';
 function BackTest() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [showErrorModal, setShowErrorModal] = useState(false);
 
   const timerId = useRef<NodeJS.Timer | null>(null);
   const assetList = useRecoilValue(assetListState);
@@ -25,7 +25,7 @@ function BackTest() {
   const createBackTest = () => {
     const values = Object.values(strategy);
 
-    if (!checkBlank<string>(values)) return setShowErrorModal((prev) => !prev);
+    if (!checkBlank<string>(values)) return setIsError(true);
 
     setIsLoading(true);
   };
@@ -35,7 +35,7 @@ function BackTest() {
 
     const formatted = {
       algo: ALLOC_ALGORITHM[algo],
-      allocRebalancing: ALLOC_REBALANCING[allocRebalancing],
+      allocRebalancing: allocRebalancing ? ALLOC_REBALANCING[allocRebalancing] : '',
       assetList,
       level: ALLOC_LEVEL[level],
       ...rest,
@@ -58,7 +58,7 @@ function BackTest() {
   };
 
   const toggleErrorModal = () => {
-    setShowErrorModal((prev) => !prev);
+    setIsError((prev) => !prev);
   };
 
   useEffect(() => {
@@ -116,9 +116,9 @@ function BackTest() {
               </Text.Medium>
             </BackTestBtn>
           )}
+          <Modal.Dimmed isOpen={isError} onClose={toggleErrorModal} />
         </Modal.Trigger>
-        <Modal.Dimmed isOpen={showErrorModal} onClose={toggleErrorModal} />
-        <Modal.Contents isOpen={showErrorModal} onClose={toggleErrorModal}>
+        <Modal.Contents isOpen={isError} onClose={toggleErrorModal}>
           <Modal.Title>필수 항목 미설정</Modal.Title>
           <Description>
             <Text.Regular weight={300}>[필수] &quot;모든 항목을 설정&quot; 해주셔야</Text.Regular>

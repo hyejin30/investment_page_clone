@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
 import styled from 'styled-components';
-import { theme } from 'styles';
+import { theme, fontSize } from 'styles';
 
 interface IValueProps extends HTMLAttributes<HTMLInputElement> {
   title: HTMLInputElement['title'];
@@ -26,6 +26,8 @@ const StyledInput = styled.input<Partial<IValueProps>>`
   padding: 12px 20px;
   color: ${theme.white};
   text-align: ${(props) => props.textAlign};
+  font-size: ${fontSize.regular};
+  font-weight: 300;
 
   ::placeholder {
     font-weight: 300;
