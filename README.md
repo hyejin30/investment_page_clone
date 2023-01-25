@@ -1,7 +1,9 @@
 ## 프로젝트 소개
 
-투자 포트폴리오 사이트의 '자산 배분' 페이지를 클론한 프로젝트<br />
-(참고 페이지 : https://quantus.kr/alloc)
+- 투자 포트폴리오 사이트의 '자산 배분' 페이지를 클론한 프로젝트
+- 원본 사이트 : https://quantus.kr/alloc
+- 개발 인원 : 1인 (김혜진)
+- 개발 기간 : 22.1.19 ~ 1.25 (1주)
 
 <br />
 
@@ -18,20 +20,18 @@
 
 <br />
 
-## 프로젝트 클론 및 패키지 설치
+## 프로젝트 설치 및 실행 방법
 
-```
+```typescript
+// 클론 
 git clone https://github.com/hyejin30/investment_site_project
 cd investment_site_project
+
+// 패키지 설치
 yarn install
 yarn add global json-server
-```
 
-<br />
-
-## 프로젝트 및 json-server 실행
-
-```
+// 프로젝트 및 json-server 실행
 yarn start
 json-server ./db.json --port 4000
 ```
@@ -57,9 +57,9 @@ Jira를 이용해 할 일을 관리했습니다.
 ```
 <br />
 
-## 자산군 추가 기능
-- 소스코드를 압축 해제한 뒤 `json-server 라이브러리 설치` + `서버 실행` 을 하면
-로컬에서 주식 목록을 확인할 수 있습니다.
+## 자산군 추가 기능 테스트 방법
+- 자산군 추가를 위해서는 10만 개의 주식 목록을 받아야 합니다.
+- `json-server 라이브러리 설치` + `서버 실행` 을 하면 로컬에서 주식 목록을 확인할 수 있습니다.
 - json-server로 주식 목록을 받아오고 있어,  아래 코드를 꼭 실행 부탁드립니다
 
 ```
