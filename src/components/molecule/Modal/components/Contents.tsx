@@ -21,8 +21,8 @@ const Container = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: ${theme.lightBlack};
+  background: ${theme.GRAY_DARK_X3};
   border-radius: 8px;
-  border-bottom: 1px solid ${theme.black};
+  border-bottom: 1px solid ${theme.BLACK};
   z-index: ${Z_INDEX.modal};
 `;

@@ -9,7 +9,7 @@ interface ITextSmall {
 }
 
 function TextSmall(props: ITextSmall) {
-  const { children, weight = 300, color = theme.white, ...restProps } = props;
+  const { children, weight = 300, color = theme.WHITE, ...restProps } = props;
 
   return (
     <Text color={color} weight={weight} {...restProps}>

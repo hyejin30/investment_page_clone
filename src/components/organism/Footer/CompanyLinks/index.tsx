@@ -11,11 +11,15 @@ function CompanyLinks() {
       {FOOTER_LINK_LIST.map((link, idx) =>
         link.key === 'cafe' ? (
           <UnderLineLink key={`footer-link-${idx}`} href={link.path}>
-            <Text.Small color={theme.lightGray}>{link.name}</Text.Small>
+            <Text.Small color={theme.GRAY_LIGHT_X2} weight={400}>
+              {link.name}
+            </Text.Small>
           </UnderLineLink>
         ) : (
           <a key={`footer-link-${idx}`} href={link.path}>
-            <Text.Small color={theme.darkGray}>{link.name}</Text.Small>
+            <Text.Small color={theme.GRAY_DARK_X1} weight={400}>
+              {link.name}
+            </Text.Small>
           </a>
         ),
       )}
@@ -32,5 +36,5 @@ const List = styled.section`
 
 const UnderLineLink = styled.a`
   text-decoration: underline;
-  text-decoration-color: ${theme.darkGray};
+  text-decoration-color: ${theme.GRAY_DARK_X2};
 `;

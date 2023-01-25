@@ -67,7 +67,7 @@ function Asset({
       />
       <BtnList>
         {isLastAsset && <AddBtn onClick={onAdd}>추가하기</AddBtn>}
-        <DeleteBtn bgColor={theme.black} color={theme.white} weight={400} onClick={onDelete}>
+        <DeleteBtn bgColor={theme.BLACK} color={theme.WHITE} weight={400} onClick={onDelete}>
           삭제하기
         </DeleteBtn>
       </BtnList>
@@ -86,24 +86,24 @@ const AssetDropdown = styled(Dropdown)`
   // Dropdown.List
   ul {
     max-height: 420px;
-    border: 1px solid ${theme.border.lightGray};
+    border: 1px solid ${theme.GRAY_LIGHT_X2};
 
     // SearchBar
     input {
       border: 0;
-      border-bottom: 1px solid ${theme.border.lightGray};
+      border-bottom: 1px solid ${theme.GRAY_LIGHT_X2};
       border-radius: 5px 5px 0 0;
     }
 
     // Dropdown.Option
     li {
-      background: ${theme.black};
-      border-bottom: 1px solid ${theme.border.lightGray};
+      background: ${theme.BLACK};
+      border-bottom: 1px solid ${theme.GRAY_LIGHT_X2};
       border-radius: 0;
 
       :hover {
         background: none;
-        border: 1px solid ${theme.white};
+        border: 1px solid ${theme.WHITE};
       }
 
       :last-child {
@@ -127,5 +127,5 @@ const AddBtn = styled(BaseBtn)``;
 
 const DeleteBtn = styled(BaseBtn)`
   background: #000000;
-  color: ${theme.white};
+  color: ${theme.WHITE};
 `;

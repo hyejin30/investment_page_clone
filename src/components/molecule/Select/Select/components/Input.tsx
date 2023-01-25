@@ -36,16 +36,16 @@ const StyledInput = styled(Input)`
 `;
 
 const StyledInputValue = styled(Input.Value)`
-  border: 1px solid ${theme.border.lightGray};
+  border: 1px solid ${theme.GRAY_LIGHT_X2};
   border-radius: 5px;
   cursor: pointer;
 
   :hover {
-    border: 1px solid ${theme.white};
+    border: 1px solid ${theme.WHITE};
   }
 
   :focus {
-    border: 1px solid ${theme.orange};
+    border: 1px solid ${theme.ORANGE};
   }
 `;
 

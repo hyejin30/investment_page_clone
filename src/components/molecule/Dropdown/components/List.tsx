@@ -19,8 +19,8 @@ const Container = styled.ul`
   position: absolute;
   top: 80px;
   width: 100%;
-  background: ${theme.background.darkGray};
-  border: 1px solid ${theme.gray};
+  background: ${theme.GRAY_DARK_X3};
+  border: 1px solid ${theme.GRAY_DARK_X2};
   border-radius: 5px;
   text-align: center;
   overflow-y: auto;

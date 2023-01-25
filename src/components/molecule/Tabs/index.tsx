@@ -36,9 +36,9 @@ const Container = styled.div`
 `;
 
 const TabBtn = styled(Button)<ITabBtnStyle>`
-  background: ${(props) => (props.isActive ? theme.orange : theme.lightBlack)};
+  background: ${(props) => (props.isActive ? theme.ORANGE : theme.GRAY_DARK_X3)};
   span {
-    color: ${(props) => (props.isActive ? theme.black : theme.white)};
+    color: ${(props) => (props.isActive ? theme.BLACK : theme.WHITE)};
     font-weight: ${(props) => (props.isActive ? 500 : 300)};
   }
 `;

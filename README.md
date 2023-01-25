@@ -24,6 +24,7 @@ yarn create react-app investment_page_clone --template typescript
 ```
 git clone https://github.com/hyejin30/investment_page_clone
 yarn install
+yarn add global json-server
 ```
 
 <br />
@@ -33,7 +34,6 @@ yarn install
 ```
 cd investment_page_clone
 yarn start
-yarn add global json-server
 json-server ./db.json --port 4000
 ```
 

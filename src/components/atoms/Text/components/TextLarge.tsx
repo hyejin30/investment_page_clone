@@ -9,7 +9,7 @@ interface ITextLarge {
 }
 
 function TextLarge(props: ITextLarge) {
-  const { children, weight = 500, color = theme.white, ...restProps } = props;
+  const { children, weight = 500, color = theme.WHITE, ...restProps } = props;
 
   return (
     <Text color={color} weight={weight} {...restProps}>

@@ -43,18 +43,18 @@ const Container = styled.div`
   ${flex('', 'center')}
   position: sticky;
   top: 0;
-  background: ${theme.black};
+  background: ${theme.BLACK};
 
   input {
     padding: 15px 40px;
-    border: 1px solid ${theme.border.lightGray};
+    border: 1px solid ${theme.GRAY_LIGHT_X2};
 
     :hover {
-      border: 1px solid ${theme.white};
+      border: 1px solid ${theme.WHITE};
     }
 
     :focus {
-      border: 1px solid ${theme.orange};
+      border: 1px solid ${theme.ORANGE};
     }
   }
 `;

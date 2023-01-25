@@ -17,5 +17,5 @@ const Container = styled.div`
   ${flex('', 'center', 'column')};
   min-width: 420px;
   padding: 30px;
-  border-bottom: 1px solid ${theme.black};
+  border-bottom: 1px solid ${theme.BLACK};
 `;

@@ -10,7 +10,7 @@ interface IModalButtonProps extends HTMLAttributes<HTMLButtonElement> {
   onClick: () => void;
 }
 
-function ModalButton({ children, bgColor = 'none', color = theme.orange, ...restProps }: IModalButtonProps) {
+function ModalButton({ children, bgColor = 'none', color = theme.ORANGE, ...restProps }: IModalButtonProps) {
   return (
     <StyledButton bgColor={bgColor} color={color} {...restProps}>
       {children}
