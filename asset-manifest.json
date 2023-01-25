@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/investment_page_clone/static/css/main.588d2049.css",
+    "main.js": "/investment_page_clone/static/js/main.dde9a263.js",
+    "static/js/787.6a601c7f.chunk.js": "/investment_page_clone/static/js/787.6a601c7f.chunk.js",
+    "index.html": "/investment_page_clone/index.html",
+    "main.588d2049.css.map": "/investment_page_clone/static/css/main.588d2049.css.map",
+    "main.dde9a263.js.map": "/investment_page_clone/static/js/main.dde9a263.js.map",
+    "787.6a601c7f.chunk.js.map": "/investment_page_clone/static/js/787.6a601c7f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.588d2049.css",
+    "static/js/main.dde9a263.js"
+  ]
+}
