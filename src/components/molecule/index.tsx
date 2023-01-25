@@ -5,3 +5,4 @@ export { default as SearchBar } from './SearchBar';
 export { default as VirtualizedList } from './VirtualizedList';
 export { default as Calendar } from './Calendar';
 export { default as Modal } from './Modal';
+export { default as Tabs } from './Tabs';
