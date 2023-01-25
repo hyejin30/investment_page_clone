@@ -105,10 +105,10 @@ const Modal = Object.assign(Layout, {
   </Modal.Trigger>
   <Modal.Contents isOpen={isError} onClose={toggleErrorModal}>
     <Modal.Title>필수 항목 미설정</Modal.Title>
-    <Description>
+    <Modal.Description>
       <Text.Regular weight={300}>[필수] &quot;모든 항목을 설정&quot; 해주셔야</Text.Regular>
       <Text.Regular weight={300}>백테스트 이(가) 실행됩니다.</Text.Regular>
-    </Description>
+    </Modal.Description>
     <Modal.Button onClick={toggleErrorModal}>확인</Modal.Button>
   </Modal.Contents>
 </Modal>
