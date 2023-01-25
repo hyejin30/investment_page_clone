@@ -21,7 +21,7 @@ function DateSelectInput(props: IDateSelectInputProps) {
       <Input.Value title={title} onChange={onChange} {...restProps} />
       <Input.Right>
         <CalendarIcon title={title} onClick={onClick}>
-          <img alt="calendar" src="https://hyejin30.github.io/investment_site_project/images/ic-calendar-orange.svg" />
+          <img alt="calendar" src="/images/ic-calendar-orange.svg" />
         </CalendarIcon>
       </Input.Right>
     </StyledInput>
