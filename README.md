@@ -13,7 +13,7 @@
 
 
 ## 선정 이유
-- Select, Dropdown 컴포넌트 재사용 
+- Select, Dropdown 등 컴포넌트 재사용 연습
 - 10만 개 이상의 대용량 데이터 렌더링 연습
 
 <br />
