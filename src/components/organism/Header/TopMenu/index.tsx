@@ -28,7 +28,7 @@ function TopMenu() {
             <Tab onClick={() => handleTabClick('고급')}>고급</Tab>
           </Tabs>
           <Link to="/">
-            <Text.Regular color={theme.red} weight={700}>
+            <Text.Regular color={theme.RED} weight={700}>
               로그인 하러가기
             </Text.Regular>
           </Link>

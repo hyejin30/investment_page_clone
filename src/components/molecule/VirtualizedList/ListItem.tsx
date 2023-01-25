@@ -29,6 +29,6 @@ export default ListItem;
 
 const Container = styled.li`
   padding: 15px 0;
-  color: ${theme.white};
+  color: ${theme.WHITE};
   cursor: pointer;
 `;

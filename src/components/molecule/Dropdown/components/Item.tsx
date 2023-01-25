@@ -30,12 +30,12 @@ const Container = styled.li<IActive>`
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  color: ${theme.white};
+  color: ${theme.WHITE};
   cursor: pointer;
   ${(props) => props.isActive && ActiveStyle}
 
   :hover {
-    background: ${theme.gray};
+    background: ${theme.GRAY_DARK_X2};
   }
 `;
 

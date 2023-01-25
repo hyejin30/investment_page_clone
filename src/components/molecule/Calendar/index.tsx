@@ -47,10 +47,10 @@ const Container = styled.div`
   .rdp {
     margin: 0;
     padding: 20px 15px 15px;
-    background: ${theme.lightBlack};
-    border: 1px solid ${theme.gray};
+    background: ${theme.GRAY_DARK_X3};
+    border: 1px solid ${theme.GRAY_DARK_X2};
     border-radius: 5px;
-    color: ${theme.white};
+    color: ${theme.WHITE};
   }
 
   .rdp-caption {
@@ -69,20 +69,20 @@ const Container = styled.div`
 
   .rdp-head_cell {
     font-size: ${fontSize.regular};
-    color: ${theme.lightGray};
+    color: ${theme.GRAY_LIGHT_X2};
   }
 
   .rdp-day {
     font-size: ${fontSize.regular};
-    color: ${theme.lightGray};
+    color: ${theme.GRAY_LIGHT_X2};
 
     :hover {
-      background: ${theme.darkGray} !important;
+      background: ${theme.GRAY_DARK_X1} !important;
     }
   }
 
   .rdp-day_selected {
-    background: ${theme.orange};
-    color: ${theme.white};
+    background: ${theme.ORANGE};
+    color: ${theme.WHITE};
   }
 `;

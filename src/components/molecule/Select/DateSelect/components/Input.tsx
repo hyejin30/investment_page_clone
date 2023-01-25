@@ -32,22 +32,22 @@ export default DateSelectInput;
 
 const StyledInput = styled(Input)`
   input {
-    border: 1px solid ${theme.border.lightGray};
+    border: 1px solid ${theme.GRAY_LIGHT_X2};
     border-radius: 5px;
 
     :hover {
-      border: 1px solid ${theme.white};
+      border: 1px solid ${theme.WHITE};
     }
 
     :focus {
-      border: 1px solid ${theme.orange};
+      border: 1px solid ${theme.ORANGE};
     }
   }
 `;
 
 const CalendarIcon = styled.div`
   position: absolute;
-  top: 12px;
+  top: 14px;
   right: 30px;
   width: 10px;
   height: 10px;

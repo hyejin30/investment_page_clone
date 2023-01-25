@@ -66,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         width: 100vw;
         height: 100vh;
-        background: ${theme.black};
+        background: ${theme.BLACK};
         padding: 0;
         margin: 0;
         font-family: 'NanumSquare', sans-serif;

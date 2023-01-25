@@ -1,19 +1,15 @@
 const theme = {
-  black: '#0e0e0e',
-  lightBlack: '#1e1e1e',
-  red: '#ec2626',
-  white: '#fcfcfc',
-  lightGray: '#9f9f9f',
-  darkGray: '#6e6e6e',
-  gray: '#3e3e3e',
-  orange: '#ec6126',
-  border: {
-    darkGray: '#595959',
-    lightGray: '#9f9f9f',
-  },
-  background: {
-    darkGray: '#181818',
-  },
+  BLACK: '#0e0e0e',
+  GRAY_DARK_X3: '#1e1e1e',
+  GRAY_DARK_X2: '#3e3e3e',
+  GRAY_DARK_X1: '#6e6e6e',
+  GRAY_LIGHT_X3: '#cfcfcf',
+  GRAY_LIGHT_X2: '#9f9f9f',
+  GRAY_LIGHT_X1: '#e6e6e6',
+  WHITE: '#fcfcfc',
+  ORANGE: '#ec6126',
+  RED: '#ec2626',
+  RED_GRADIENT: 'linear-gradient(to right, rgb(236, 97, 38), rgb(236, 38, 38))',
 };
 
 export default theme;

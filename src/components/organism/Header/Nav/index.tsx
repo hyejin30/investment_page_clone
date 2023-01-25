@@ -26,8 +26,8 @@ export default Nav;
 
 const Container = styled.nav`
   ${flex('center', '')}
-  border-top: 1px solid ${theme.border.darkGray};
-  border-bottom: 1px solid ${theme.border.darkGray};
+  border-top: 1px solid ${theme.GRAY_DARK_X1};
+  border-bottom: 1px solid ${theme.GRAY_DARK_X1};
 `;
 
 const Navigation = styled.ul`

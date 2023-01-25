@@ -43,16 +43,16 @@ const Wrapper = styled.section`
   position: sticky;
   top: 131.5px;
   padding: 30px 0 20px;
-  background: ${theme.black};
+  background: ${theme.BLACK};
   z-index: ${Z_INDEX.header};
 `;
 
 const InputValue = styled(Input.Value)`
   padding: 0;
-  border-bottom: 2px solid ${theme.white};
+  border-bottom: 2px solid ${theme.WHITE};
   font-size: ${fontSize.large};
   font-weight: 700;
-  color: ${theme.white};
+  color: ${theme.WHITE};
 
   ::placeholder {
     font-weight: 700;

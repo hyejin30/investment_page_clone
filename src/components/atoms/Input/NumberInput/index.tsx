@@ -39,15 +39,15 @@ export default NumberInput;
 
 const StyledInput = styled(Input)`
   input {
-    border: 1px solid ${theme.border.lightGray};
+    border: 1px solid ${theme.GRAY_LIGHT_X2};
     border-radius: 5px;
 
     :hover {
-      border: 1px solid ${theme.white};
+      border: 1px solid ${theme.WHITE};
     }
 
     :focus {
-      border: 1px solid ${theme.orange};
+      border: 1px solid ${theme.ORANGE};
     }
   }
 `;
@@ -56,5 +56,5 @@ const Percentage = styled.span`
   position: absolute;
   top: 45px;
   right: 28px;
-  color: ${theme.white};
+  color: ${theme.WHITE};
 `;

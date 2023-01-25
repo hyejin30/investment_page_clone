@@ -20,6 +20,6 @@ const Container = styled.header`
   ${flex('', '', 'column')}
   position: sticky;
   top: 0px;
-  background: ${theme.black};
+  background: ${theme.BLACK};
   z-index: ${Z_INDEX.header};
 `;

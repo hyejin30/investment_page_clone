@@ -16,7 +16,7 @@ function NavMenu({ children, path }: INavMenuProps) {
   return (
     <li>
       <Link to={path}>
-        <Text.Regular color={pathname === path ? theme.red : theme.white} weight={pathname === path ? 700 : 400}>
+        <Text.Regular color={pathname === path ? theme.RED : theme.WHITE} weight={pathname === path ? 700 : 400}>
           {children}
         </Text.Regular>
       </Link>

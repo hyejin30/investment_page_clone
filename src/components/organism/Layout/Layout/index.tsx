@@ -23,7 +23,7 @@ export default Layout;
 
 const Container = styled.div`
   ${flex('', 'center', 'column')}
-  background: ${theme.black};
+  background: ${theme.BLACK};
 `;
 
 const Body = styled.main`

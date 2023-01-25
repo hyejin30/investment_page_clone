@@ -24,14 +24,14 @@ export default Value;
 const StyledInput = styled.input<Partial<IValueProps>>`
   width: 100%;
   padding: 12px 20px;
-  color: ${theme.white};
+  color: ${theme.WHITE};
   text-align: ${(props) => props.textAlign};
   font-size: ${fontSize.regular};
   font-weight: 300;
 
   ::placeholder {
     font-weight: 300;
-    color: ${theme.white};
+    color: ${theme.WHITE};
   }
 
   :focus {

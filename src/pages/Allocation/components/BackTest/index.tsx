@@ -25,7 +25,9 @@ function BackTest() {
   const createBackTest = () => {
     const values = Object.values(strategy);
 
-    if (!checkBlank<string>(values)) return setIsError(true);
+    const isValid = checkBlank<string>(values) && assetList.length;
+
+    if (!isValid) return setIsError(true);
 
     setIsLoading(true);
   };
@@ -92,7 +94,7 @@ function BackTest() {
           {progress < 20 ? (
             <MessageWrap>
               <Message>대기 중...</Message>
-              <ClipLoader loading color={theme.orange} size={20} />
+              <ClipLoader loading color={theme.ORANGE} size={20} />
             </MessageWrap>
           ) : (
             <ProgressBar progress={progress}></ProgressBar>
@@ -103,7 +105,7 @@ function BackTest() {
         <ProgressBtn>
           <MessageWrap>
             <Message>생성 중...</Message>
-            <ClipLoader loading color={theme.orange} size={20} />
+            <ClipLoader loading color={theme.ORANGE} size={20} />
           </MessageWrap>
         </ProgressBtn>
       )}
@@ -111,7 +113,7 @@ function BackTest() {
         <Modal.Trigger>
           {!isLoading && !isSuccess && (
             <BackTestBtn onClick={createBackTest}>
-              <Text.Medium color={theme.black} weight={700}>
+              <Text.Medium color={theme.BLACK} weight={700}>
                 백테스트
               </Text.Medium>
             </BackTestBtn>
@@ -141,13 +143,13 @@ const Container = styled.div`
 const BackTestBtn = styled(Button)`
   width: 190px;
   height: 60px;
-  background: linear-gradient(to right, rgb(236, 97, 38), rgb(236, 38, 38));
+  background: ${theme.RED_GRADIENT};
 `;
 
 const ProgressBtn = styled.button`
   width: 190px;
   height: 60px;
-  border: 1px solid ${theme.orange};
+  border: 1px solid ${theme.ORANGE};
   border-radius: 8px;
 `;
 
@@ -155,12 +157,12 @@ const ProgressBar = styled.div<{ progress: number }>`
   width: ${(props) => props.progress}%;
   height: 100%;
   border-radius: 8px;
-  background: linear-gradient(to right, rgb(236, 97, 38), rgb(236, 38, 38));
+  background: ${theme.RED_GRADIENT};
 `;
 
 const Message = styled(Text.Medium)`
   font-weight: 700;
-  color: ${theme.white};
+  color: ${theme.WHITE};
 `;
 
 const MessageWrap = styled.div`

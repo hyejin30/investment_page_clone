@@ -15,7 +15,7 @@ interface IButtonProps extends HTMLAttributes<HTMLButtonElement> {
 }
 
 function Button(props: IButtonProps) {
-  const { type = 'button', bgColor = theme.orange, color = theme.black, weight = 700, children, ...restProps } = props;
+  const { type = 'button', bgColor = theme.ORANGE, color = theme.BLACK, weight = 700, children, ...restProps } = props;
 
   return (
     <StyledButton bgColor={bgColor} color={color} type={type} {...restProps}>
@@ -36,7 +36,7 @@ const StyledButton = styled.button<IButtonStyle>`
   white-space: nowrap;
 
   :disabled {
-    background: ${theme.gray};
-    color: ${theme.black};
+    background: ${theme.GRAY_DARK_X2};
+    color: ${theme.BLACK};
   }
 `;
