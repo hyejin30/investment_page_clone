@@ -15,7 +15,7 @@ function CompanyInfo() {
           주식회사 퀀터스테크놀로지스
         </Text.Medium>
         {FOOTER_DETAIL_LIST.map((detail, idx) => (
-          <Text.Small key={`footer-detail-${idx}`} color={theme.GRAY_LIGHT_X2}>
+          <Text.Small key={`footer-detail-${idx}`} color={theme.GRAY_LIGHT_X3}>
             {detail}
           </Text.Small>
         ))}
@@ -34,5 +34,5 @@ const Wrapper = styled.section`
 
 const Detail = styled.div`
   ${flex('', '', 'column')}
-  row-gap: 15px;
+  row-gap: 20px;
 `;

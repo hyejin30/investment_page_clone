@@ -60,5 +60,5 @@ const InputValue = styled(Input.Value)`
 `;
 
 const SaveBtn = styled(Button)`
-  padding: 12px 30px;
+  padding: 10px 30px 12px;
 `;

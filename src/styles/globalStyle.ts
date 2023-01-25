@@ -69,7 +69,7 @@ const GlobalStyle = createGlobalStyle`
         background: ${theme.BLACK};
         padding: 0;
         margin: 0;
-        font-family: 'NanumSquare', sans-serif;
+        font-family: 'Noto Sans KR', sans-serif;
     };
 
     #root {

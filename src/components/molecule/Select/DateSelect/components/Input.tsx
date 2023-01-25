@@ -47,7 +47,7 @@ const StyledInput = styled(Input)`
 
 const CalendarIcon = styled.div`
   position: absolute;
-  top: 14px;
+  top: 16px;
   right: 30px;
   width: 10px;
   height: 10px;

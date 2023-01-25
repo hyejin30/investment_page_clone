@@ -161,7 +161,7 @@ const ProgressBar = styled.div<{ progress: number }>`
 `;
 
 const Message = styled(Text.Medium)`
-  font-weight: 700;
+  font-weight: 500;
   color: ${theme.WHITE};
 `;
 
