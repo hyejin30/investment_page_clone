@@ -9,6 +9,8 @@ export const fitImg = css`
 `;
 
 export const Z_INDEX = {
-  header: 2,
   dropdown: 1,
+  header: 2,
+  dimmed: 3,
+  modal: 4,
 };
