@@ -200,7 +200,7 @@ const updateAsset = (key: 'name' | 'ratio', title: string, value: string) => {
 
 - recoil
     - 전역 상태 2개로 사용자가 입력한 값을 저장
-      *설정 값 초기화 시, 자산군은 초기화 되지 않는 점을 고려해 2개로 분리
+      (*설정 값 초기화 시, 자산군은 초기화 되지 않는 점을 고려해 2개로 분리))
     - assetList : 자산군
     - strategy : 자산군을 제외한 모든 값
 
