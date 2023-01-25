@@ -1,8 +1,8 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from 'react-query';
 import axios from 'axios';
 import { IStock } from 'types/allocation';
 
-const fetchStockList = async (searchValue?: string) => {
+export const fetchStockList = async (searchValue?: string) => {
   const queryString = searchValue ? `?q=${searchValue}` : '';
 
   const { data } = await axios.get(`http://localhost:4000/stocks${queryString}`);
