@@ -20,6 +20,14 @@
 
 <br />
 
+## 프로젝트 관리
+
+Jira를 이용해 할 일을 관리했습니다.
+
+<img width="885" alt="image" src="https://user-images.githubusercontent.com/98295004/214602865-0f450351-d0ea-43dd-99de-b66fd35a4d37.png">
+
+<br />
+
 ## 프로젝트 설치 및 실행 방법
 
 ```typescript
@@ -35,14 +43,6 @@ yarn add global json-server
 yarn start
 json-server ./db.json --port 4000
 ```
-
-<br />
-
-## 프로젝트 관리
-
-Jira를 이용해 할 일을 관리했습니다.
-
-<img width="885" alt="image" src="https://user-images.githubusercontent.com/98295004/214602865-0f450351-d0ea-43dd-99de-b66fd35a4d37.png">
 
 <br />
 
